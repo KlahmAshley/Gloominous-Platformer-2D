@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 3f;
-    [SerializeField] float jumpForce = 3f;
+    [SerializeField] float moveSpeed = 5f;
+    [SerializeField] float jumpForce = 12f;
     [SerializeField] Transform groundCheck;
     [SerializeField] float groundCheckRadius = 0.12f;
     [SerializeField] InputReader inputReader;
@@ -26,8 +26,13 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        float moveDir = inputReader.inputData.walkInput;
+        if (moveDir != 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = moveDir > 0;
+        }
         Vector2 velocity = rb.linearVelocity;
-        velocity.x = inputReader.inputData.walkInput * moveSpeed;
+        velocity.x = moveDir * moveSpeed;
         rb.linearVelocity = velocity;
     }
 
