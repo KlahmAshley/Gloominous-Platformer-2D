@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public abstract  class RedOrbFactory : OrbFactory
+public class RedOrbFactory : OrbFactory
 {
-   // public abstract IOrb GetOrb();
+   public override IOrb DestoryandChangeOrb(Sprite colourSprite)
+    {
+        return new RedOrb();
+    }
 
 }

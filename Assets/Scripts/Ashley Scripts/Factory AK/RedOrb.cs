@@ -4,12 +4,12 @@ using UnityEditor;
 using UnityEngine;
 using Unity;
 
-public class RedOrb : Orb
+public class RedOrb : MonoBehaviour, IOrb
 {
     public SpriteRenderer PlayerSprite;
     public Sprite RedPlayer;
 
-    public override void Collect()
+    public void Collect(SpriteRenderer PlayerSprite, Sprite RedPlayer)
     {
         PlayerSprite.sprite = RedPlayer;
     }
