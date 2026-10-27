@@ -6,23 +6,23 @@ public class PowerupFactory : MonoBehaviour
     [SerializeField] GameObject powerJump;
     [SerializeField] GameObject powerBig;
 
-    void Awake()
+    void Start()
     {
         if (powerSpeed == null)
         {
-            powerSpeed = Resources.Load("Prefabs/SpeedPower") as GameObject;
+            powerSpeed = Resources.Load("Prefabs/Powerup_Speed") as GameObject;
         }
         if (powerJump == null)
         {
-            powerJump = Resources.Load("Prefabs/JumpPower") as GameObject;
+            powerJump = Resources.Load("Prefabs/Powerup_Jump") as GameObject;
         }
         if (powerBig == null)
         {
-            powerBig = Resources.Load("Prefabs/BigPower") as GameObject;
+            powerBig = Resources.Load("Prefabs/Powerup_Big") as GameObject;
         }
     }
 
-    public GameObject CreateEnemy(Powerups type, Vector3 position)
+    public GameObject CreatePower(Powerups type, Vector3 position)
     {
         GameObject power = null;
         switch (type)
@@ -30,10 +30,10 @@ public class PowerupFactory : MonoBehaviour
             case Powerups.Speed:
                 power = powerSpeed;
                 break;
-            case Powerups.JumpHeight:
+            case Powerups.Jump:
                 power = powerJump;
                 break;
-            case Powerups.ExtraHit:
+            case Powerups.Big:
                 power = powerBig;
                 break;
         }
@@ -44,6 +44,6 @@ public class PowerupFactory : MonoBehaviour
 public enum Powerups
 {
     Speed,
-    JumpHeight,
-    ExtraHit
+    Jump,
+    Big
 }
