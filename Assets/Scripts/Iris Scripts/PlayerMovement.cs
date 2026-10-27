@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float groundCheckRadius = 0.12f;
     [SerializeField] InputReader inputReader;
     [SerializeField] LayerMask groundLayer;
+    [SerializeField] float deathBarrierY = -6f;
     Rigidbody2D rb;
     float horizontalInput;
     int hp = 1;
@@ -22,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
         if (inputReader.inputData.jumpPressed)
         {
             ExecuteJump();
+        }
+        if (transform.position.y < deathBarrierY)
+        {
+            Die();
         }
     }
 
@@ -58,12 +64,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (hp <= 0)
         {
-            //die
+            Die();
         }
         else
         {
             hp += change;
             GetComponent<Transform>().localScale = Vector3.one * (2+hp);
         }
+    }
+
+    void Die()
+    {
+        Object.FindFirstObjectByType<SceneChanger>().GetComponent<SceneChanger>().ReloadScene();
     }
 }

@@ -3,11 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : Singleton<SceneChanger>
 {
-    int currentScene = 0;
-
-    public void setScene(int scene)
+    public void SetSceneByInt(int scene)
     {
-        currentScene = scene;
         SceneManager.LoadScene(scene);
+    }
+
+    public void SetSceneByName(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
