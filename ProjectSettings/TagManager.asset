@@ -7,6 +7,9 @@ TagManager:
   - RedOrb
   - BlueOrb
   - GreenOrb
+  - SpeedPower
+  - JumpPower
+  - BigPower
   layers:
   - Default
   - TransparentFX
