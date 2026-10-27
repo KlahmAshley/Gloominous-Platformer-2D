@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,21 +7,27 @@ public class InputReader : MonoBehaviour
     [SerializeField] InputActionAsset inputActions;
     public InputAction walkAction;
     public InputAction jumpAction;
-    public InputRoot inputData { get; private set; }
+    public InputRoot inputData { get; set; }
+    //public List<InputAction> inputRecording { get; }
 
-    private void Awake()
+    void Awake()
     {
         walkAction = inputActions.FindAction("PlayerAction/Walk");
         jumpAction = inputActions.FindAction("PlayerAction/Jump");
     }
 
-    private void OnEnable()
+    void BeginRecording()
+    {
+        
+    }
+
+    void OnEnable()
     {
         inputActions.FindAction("PlayerAction/Walk").Enable();
         inputActions.FindAction("PlayerAction/Jump").Enable();
     }
 
-    private void OnDisable()
+    void OnDisable()
     {
         walkAction.Disable();
         jumpAction.Disable();

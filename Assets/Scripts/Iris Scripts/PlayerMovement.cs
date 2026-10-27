@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 5f;
-    [SerializeField] float jumpForce = 12f;
+    [SerializeField] public float moveSpeed = 5f;
+    [SerializeField] public float jumpForce = 12f;
     [SerializeField] Transform groundCheck;
     [SerializeField] float groundCheckRadius = 0.12f;
     [SerializeField] InputReader inputReader;
     [SerializeField] LayerMask groundLayer;
     Rigidbody2D rb;
     float horizontalInput;
+    int hp = 1;
 
     void Awake()
     {
@@ -18,16 +19,20 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (inputReader.inputData.jumpPressed && IsGrounded())
+        if (inputReader.inputData.jumpPressed)
         {
-            Jump();
+            ExecuteJump();
         }
     }
 
     void FixedUpdate()
     {
-        float moveDir = inputReader.inputData.walkInput;
-        if (moveDir != 0)
+        ExecuteWalk(inputReader.inputData.walkInput);
+    }
+
+    void ExecuteWalk(float moveDir)
+    {
+        if (inputReader.inputData.walkInput != 0)
         {
             GetComponent<SpriteRenderer>().flipX = moveDir > 0;
         }
@@ -36,13 +41,29 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = velocity;
     }
 
+    void ExecuteJump()
+    {
+        if (IsGrounded())
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        }
+    }
+
     bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer) != null;
     }
 
-    void Jump()
+    public void ChangeHealth(int change)
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        if (hp <= 0)
+        {
+            //die
+        }
+        else
+        {
+            hp += change;
+            GetComponent<Transform>().localScale = Vector3.one * (2+hp);
+        }
     }
 }
