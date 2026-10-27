@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    bool isGameOver = false; //dead
-    bool isGamePaused = false; //game paused state
-    bool MainMenu = true; //disable controls when in main menu
+    public bool isGameOver = false; //dead
+    public bool isGamePaused = false; //game paused state
+    public bool MainMenu = true; //disable controls when in main menu
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
