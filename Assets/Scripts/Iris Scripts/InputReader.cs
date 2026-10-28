@@ -9,7 +9,6 @@ public class InputReader : MonoBehaviour
     public InputAction jumpAction;
     public InputRoot inputData { get; set; }
     public List<InputRoot> inputRecording = new List<InputRoot>();
-    bool isRecording;
     bool isPlayback;
     int frameCount = 0;
 
@@ -20,13 +19,11 @@ public class InputReader : MonoBehaviour
         SceneChanger sceneChanger = Object.FindFirstObjectByType<SceneChanger>().GetComponent<SceneChanger>();
         if (sceneChanger.isReplay)
         {
-            isRecording = false;
             isPlayback = true;
             inputRecording = sceneChanger.inputRecording;
         }
         else
         {
-            isRecording = true;
             isPlayback = false;
         }
     }
