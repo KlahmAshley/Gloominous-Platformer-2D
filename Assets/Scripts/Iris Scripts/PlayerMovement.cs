@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     int hp = 1;
 
-
     //Ashley Changes: Adding my Audio references and calls, I am going to create a seoerate script to handle orb counter + scene changing for cleaner code!
     public AudioSource deathSound;
     public AudioSource jumpSound;
@@ -23,6 +22,13 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Start()
+    {
+        AudioManager audioManager = Object.FindFirstObjectByType<AudioManager>().GetComponent<AudioManager>();
+        deathSound = audioManager.deathSound;
+        jumpSound = audioManager.jumpSound;
     }
 
     void Update()

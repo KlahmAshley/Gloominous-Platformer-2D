@@ -2549,6 +2549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e45c2cf85dfcca40a689c7dab40a172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSound: {fileID: 710233808}
+  deathSound: {fileID: 862549755}
 --- !u!1 &943483114
 GameObject:
   m_ObjectHideFlags: 0
@@ -3735,63 +3737,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7367196903672823909, guid: 71425f9ff6a5bb34db9aaddc211cfef3, type: 3}
   m_PrefabInstance: {fileID: 1812116997}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1812431564
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2818324358193608120, guid: 600c742adfa80254395fe3b0250f2ee7, type: 3}
-      propertyPath: m_Name
-      value: RedOrb (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338526693079415026, guid: 600c742adfa80254395fe3b0250f2ee7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338526693079415026, guid: 600c742adfa80254395fe3b0250f2ee7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338526693079415026, guid: 600c742adfa80254395fe3b0250f2ee7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338526693079415026, guid: 600c742adfa80254395fe3b0250f2ee7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338526693079415026, guid: 600c742adfa80254395fe3b0250f2ee7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338526693079415026, guid: 600c742adfa80254395fe3b0250f2ee7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338526693079415026, guid: 600c742adfa80254395fe3b0250f2ee7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338526693079415026, guid: 600c742adfa80254395fe3b0250f2ee7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338526693079415026, guid: 600c742adfa80254395fe3b0250f2ee7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338526693079415026, guid: 600c742adfa80254395fe3b0250f2ee7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 600c742adfa80254395fe3b0250f2ee7, type: 3}
 --- !u!1001 &1823347408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4280,7 +4225,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2639586076621535498, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.44
+      value: -15.4
       objectReference: {fileID: 0}
     - target: {fileID: 2639586076621535498, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4322,14 +4267,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8036594704447241609, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
-      propertyPath: jumpSound
-      value: 
-      objectReference: {fileID: 710233808}
-    - target: {fileID: 8036594704447241609, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
-      propertyPath: deathSound
-      value: 
-      objectReference: {fileID: 862549755}
     - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
       propertyPath: orbCounter
       value: 
@@ -4384,7 +4321,6 @@ SceneRoots:
   - {fileID: 454437332}
   - {fileID: 800753067}
   - {fileID: 297344683}
-  - {fileID: 1812431564}
   - {fileID: 315777925}
   - {fileID: 465242540}
   - {fileID: 525253548}

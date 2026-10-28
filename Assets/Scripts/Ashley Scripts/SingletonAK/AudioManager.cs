@@ -1,8 +1,10 @@
 using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
-
 {
+    public AudioSource jumpSound;
+    public AudioSource deathSound;
+
     public void PlaySound(AudioSource clip)
     {
        
