@@ -18,4 +18,18 @@ public class GameManager : Singleton<GameManager>
     {
         
     }
+    public void PauseGame()
+    {
+        if (!isGamePaused)
+        {
+            isGamePaused = true;
+            Time.timeScale = 0;
+        }
+        else
+        {
+            isGamePaused = false;
+            Time.timeScale = 1;
+        }
+    }
+
 }
