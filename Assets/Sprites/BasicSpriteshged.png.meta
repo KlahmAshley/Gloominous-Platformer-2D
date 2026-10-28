@@ -266,9 +266,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 53
-        y: 60
-        width: 13
-        height: 8
+        y: 59
+        width: 11
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,6 +371,72 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: BasicSpriteshged_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 59
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed44c977349bd484fb157ba3b5cdb73d
+      internalID: 1895597117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicSpriteshged_12
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 59
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934149d0bdffd3841affe992329212a5
+      internalID: 1723194872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicSpriteshged_13
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 51
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ade60d10fe9aa4a9b2b5f7fac8cb20
+      internalID: 2026908034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -388,6 +454,9 @@ TextureImporter:
       BasicSpriteshged_0: 7265294316931017979
       BasicSpriteshged_1: 1287561921969134068
       BasicSpriteshged_10: -4897991903238550145
+      BasicSpriteshged_11: 1895597117
+      BasicSpriteshged_12: 1723194872
+      BasicSpriteshged_13: 2026908034
       BasicSpriteshged_2: -5362525918157806520
       BasicSpriteshged_3: 2140228993893829488
       BasicSpriteshged_4: -485742917479191926
