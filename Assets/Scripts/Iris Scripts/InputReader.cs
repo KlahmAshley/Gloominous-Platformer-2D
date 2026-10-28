@@ -47,6 +47,10 @@ public class InputReader : MonoBehaviour
     {
         if (isPlayback)
         {
+            if (jumpAction.WasPressedThisFrame())
+            {
+                Object.FindFirstObjectByType<SceneChanger>().GetComponent<SceneChanger>().LoadReplayScene();
+            }
             if (frameCount < inputRecording.Count)
             {
                 inputData = inputRecording[frameCount];
