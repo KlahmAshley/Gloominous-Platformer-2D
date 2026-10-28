@@ -16,12 +16,12 @@ public class PowerupCollider : MonoBehaviour
     {
         if (collision.CompareTag("SpeedPower"))
         {
-            player.moveSpeed += 2;
+            player.moveSpeed += 4;
             collision.gameObject.SetActive(false);
         }
         else if (collision.CompareTag("JumpPower"))
         {
-            player.jumpForce += 2;
+            player.jumpForce += 3;
             collision.gameObject.SetActive(false);
         }
         else if (collision.CompareTag("BigPower"))
