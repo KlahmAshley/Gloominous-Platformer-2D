@@ -77,4 +77,12 @@ public class PlayerMovement : MonoBehaviour
     {
         Object.FindFirstObjectByType<SceneChanger>().GetComponent<SceneChanger>().ReloadScene();
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            ChangeHealth(-1);
+        }
+    }
 }
