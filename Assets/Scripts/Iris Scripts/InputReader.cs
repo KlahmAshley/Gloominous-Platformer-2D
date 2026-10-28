@@ -1,6 +1,6 @@
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class InputReader : MonoBehaviour
 {
@@ -8,17 +8,27 @@ public class InputReader : MonoBehaviour
     public InputAction walkAction;
     public InputAction jumpAction;
     public InputRoot inputData { get; set; }
-    //public List<InputAction> inputRecording { get; }
+    public List<InputRoot> inputRecording = new List<InputRoot>();
+    bool isRecording;
+    bool isPlayback;
+    int frameCount = 0;
 
     void Awake()
     {
         walkAction = inputActions.FindAction("PlayerAction/Walk");
         jumpAction = inputActions.FindAction("PlayerAction/Jump");
-    }
-
-    void BeginRecording()
-    {
-        
+        SceneChanger sceneChanger = Object.FindFirstObjectByType<SceneChanger>().GetComponent<SceneChanger>();
+        if (sceneChanger.isReplay)
+        {
+            isRecording = false;
+            isPlayback = true;
+            inputRecording = sceneChanger.inputRecording;
+        }
+        else
+        {
+            isRecording = true;
+            isPlayback = false;
+        }
     }
 
     void OnEnable()
@@ -35,10 +45,22 @@ public class InputReader : MonoBehaviour
 
     private void Update()
     {
-        inputData = new InputRoot
+        if (isPlayback)
         {
-            walkInput = walkAction.ReadValue<float>(),
-            jumpPressed = jumpAction.WasPressedThisFrame()
-        };
+            if (frameCount < inputRecording.Count)
+            {
+                inputData = inputRecording[frameCount];
+            }
+        }
+        else
+        {
+            inputData = new InputRoot
+            {
+                walkInput = walkAction.ReadValue<float>(),
+                jumpPressed = jumpAction.WasPressedThisFrame()
+            };
+            inputRecording.Add(inputData);
+        }
+        frameCount++;
     }
 }
