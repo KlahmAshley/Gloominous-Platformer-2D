@@ -1,5 +1,12 @@
 using UnityEngine;
 
+public enum Powerups
+{
+    Speed,
+    Jump,
+    Big
+}
+
 public class PowerupFactory : MonoBehaviour
 {
     [SerializeField] GameObject powerSpeed;
@@ -39,11 +46,4 @@ public class PowerupFactory : MonoBehaviour
         }
         return Instantiate(power, position, Quaternion.identity);
     }
-}
-
-public enum Powerups
-{
-    Speed,
-    Jump,
-    Big
 }
