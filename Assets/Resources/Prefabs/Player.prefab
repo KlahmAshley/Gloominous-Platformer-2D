@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4981002837066262043}
   - component: {fileID: 7000078392570598477}
   - component: {fileID: 7015059216157083504}
+  - component: {fileID: 8166881919853294929}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -271,6 +272,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.18, y: 0.32}
   m_Direction: 0
+--- !u!114 &8166881919853294929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169433476716986418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1dc1eb08d4e9d14582d8975e9268675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerSprite: {fileID: 8689416385624210970}
+  redPlayer: {fileID: 4241836251007435, guid: e0d054fe99741e349b331d0f648b001b, type: 3}
+  greenPlayer: {fileID: -8827038716448230306, guid: e0d054fe99741e349b331d0f648b001b, type: 3}
+  bluePlayer: {fileID: -3202927679093802910, guid: e0d054fe99741e349b331d0f648b001b, type: 3}
 --- !u!1 &3696514281982937332
 GameObject:
   m_ObjectHideFlags: 0
