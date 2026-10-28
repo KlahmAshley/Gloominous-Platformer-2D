@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             hp += change;
-            GetComponent<Transform>().localScale = Vector3.one * (2+hp);
+            GetComponent<Transform>().localScale = Vector3.one * (hp*2 + 3.5f);
         }
     }
 
