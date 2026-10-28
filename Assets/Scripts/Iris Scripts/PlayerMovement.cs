@@ -14,6 +14,12 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     int hp = 1;
 
+
+    //Ashley Changes: Adding my Audio references and calls, I am going to create a seoerate script to handle orb counter + scene changing for cleaner code!
+    public AudioSource deathSound;
+    public AudioSource jumpSound;
+
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -51,7 +57,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded())
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce); 
+            AudioManager.Instance.PlaySound(jumpSound);
+
         }
     }
 
@@ -76,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
     void Die()
     {
         Object.FindFirstObjectByType<SceneChanger>().GetComponent<SceneChanger>().ReloadScene();
+        AudioManager.Instance.PlaySound(deathSound);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

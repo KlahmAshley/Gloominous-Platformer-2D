@@ -3,19 +3,15 @@ using UnityEngine;
 public class AudioManager : Singleton<AudioManager>
 
 {
-    public AudioSource SfxSound;
-    public AudioSource Music;
-
-    public void PlaySound(AudioClip clip)
+    public void PlaySound(AudioSource clip)
     {
-        SfxSound.clip = clip;
-        SfxSound.Play();
+       
+        clip.Play();
     }
 
-    public void PlayMusic(AudioClip clipM)
+    public void PlayMusic(AudioSource clipM)
     {
-        Music.clip = clipM;
-        Music.Play();
+        clipM.Play();   
     }
 
 
