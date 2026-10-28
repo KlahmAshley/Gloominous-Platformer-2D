@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class OrbCollision : MonoBehaviour
@@ -9,7 +10,31 @@ public class OrbCollision : MonoBehaviour
     public Sprite greenPlayer;
     public Sprite bluePlayer;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public TMP_Text orbCounter;
+    public int remainingOrbs = 8;
+    public int collected = 0;
+
+    void Start()
+    {
+        orbCounter.text = collected + "/" + remainingOrbs;
+        
+    }
+
+    private void Update()
+    {
+        SceneSwitch();
+
+    }
+
+    void SceneSwitch()
+    {
+        if (remainingOrbs == collected)
+        {
+            SceneChanger.Instance.SetSceneByName("Scene2");
+        }
+    }
+ 
+private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("RedOrb"))
         {
@@ -20,6 +45,10 @@ public class OrbCollision : MonoBehaviour
             orb.Collect(PlayerSprite, redPlayer);
 
             collision.gameObject.SetActive(false);
+
+            collected++;
+
+            orbCounter.text = collected + "/" + remainingOrbs;
         }
 
         else if (collision.CompareTag("BlueOrb"))
@@ -31,6 +60,10 @@ public class OrbCollision : MonoBehaviour
             orb.Collect(PlayerSprite, bluePlayer);
 
             collision.gameObject.SetActive(false);
+
+            collected++;
+
+            orbCounter.text = collected + "/" + remainingOrbs;
         }
 
         else if (collision.CompareTag("GreenOrb"))
@@ -42,6 +75,10 @@ public class OrbCollision : MonoBehaviour
             orb.Collect(PlayerSprite, greenPlayer);
 
             collision.gameObject.SetActive(false);
+
+            collected++;
+
+            orbCounter.text = collected + "/" + remainingOrbs;
         }
 
         else
