@@ -75,12 +75,12 @@ public class ZachEnemy : Enemy
             if (direction.x > 0)
             {
                 // Player is to the right
-                transform.localScale = new Vector3(3, 3, 1); // Face right
+                transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 1); // Face right
             }
             else if (direction.x < 0)
             {
                 // Player is to the left
-                transform.localScale = new Vector3(-3, 3, 1); // Face left
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, 1); // Face left
             }
         }
     }
