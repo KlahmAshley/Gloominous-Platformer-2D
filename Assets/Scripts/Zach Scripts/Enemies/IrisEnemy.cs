@@ -14,7 +14,6 @@ public class IrisEnemy : Enemy
 
     [SerializeField] Transform target;
 
-    private Rigidbody2D rb;
     private float boostTimer;
     private bool isBoosting;
     protected override void Awake()
