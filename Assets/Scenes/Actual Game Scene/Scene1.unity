@@ -819,6 +819,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: IrisEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6639456109832109506, guid: c44f395f3ab91a34180f258430f68d70, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639456109832109506, guid: c44f395f3ab91a34180f258430f68d70, type: 3}
+      propertyPath: normalGrav
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639456109832109506, guid: c44f395f3ab91a34180f258430f68d70, type: 3}
+      propertyPath: fallingGrav
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8912046207117915864, guid: c44f395f3ab91a34180f258430f68d70, type: 3}
       propertyPath: m_SortingOrder
       value: 162
@@ -4000,11 +4012,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5281701508415888908, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.26
+      value: 10.07
       objectReference: {fileID: 0}
     - target: {fileID: 5281701508415888908, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.33
+      value: -3.91
       objectReference: {fileID: 0}
     - target: {fileID: 5281701508415888908, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4046,6 +4058,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 8986867969531972980}
+    - target: {fileID: 8017228089335147901, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
+      propertyPath: stopRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017228089335147901, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
+      propertyPath: retreatRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8467615733214842398, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1225
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047723545465224281, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1225
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

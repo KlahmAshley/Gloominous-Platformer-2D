@@ -86,6 +86,10 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             hp += change;
+            if (hp <= 0)
+            {
+                Die();
+            }
             GetComponent<Transform>().localScale = Vector3.one * (hp*2 + 3.5f);
         }
     }
