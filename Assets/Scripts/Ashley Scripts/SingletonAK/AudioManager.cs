@@ -4,6 +4,9 @@ public class AudioManager : Singleton<AudioManager>
 {
     public AudioSource jumpSound;
     public AudioSource deathSound;
+    public AudioSource orbPickupSound;
+    public AudioSource powerUpSound;
+
 
     public void PlaySound(AudioSource clip)
     {
