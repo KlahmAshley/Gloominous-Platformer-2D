@@ -70,6 +70,10 @@ public class InputReader : MonoBehaviour
 
                 ProcessData(inputData);
             }
+            else
+            {
+                Object.FindFirstObjectByType<SceneChanger>().GetComponent<SceneChanger>().LoadReplayScene();
+            }
         }
         else
         {
