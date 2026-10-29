@@ -33,10 +33,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (inputReader.inputData.jumpPressed)
-        {
-            ExecuteJump();
-        }
+        //if (inputReader.inputData.jumpPressed)
+        //{
+        //    ExecuteJump();
+        //}
         if (transform.position.y < deathBarrierY)
         {
             Die();
@@ -45,12 +45,12 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        ExecuteWalk(inputReader.inputData.walkInput);
+        ExecuteWalk(horizontalInput);
     }
 
     void ExecuteWalk(float moveDir)
     {
-        if (inputReader.inputData.walkInput != 0)
+        if (moveDir != 0)
         {
             GetComponent<SpriteRenderer>().flipX = moveDir > 0;
         }
@@ -58,8 +58,11 @@ public class PlayerMovement : MonoBehaviour
         velocity.x = moveDir * moveSpeed;
         rb.linearVelocity = velocity;
     }
-
-    void ExecuteJump()
+    public void SetHorizontal(float dir)
+    {
+        horizontalInput = dir;
+    }
+    public void ExecuteJump()
     {
         if (IsGrounded())
         {

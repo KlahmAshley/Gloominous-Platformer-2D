@@ -206,6 +206,17 @@ MonoBehaviour:
   normalGrav: 1
   maxFallSpeed: 1
   target: {fileID: 0}
+--- !u!114 &380791180 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8036594704447241609, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+  m_PrefabInstance: {fileID: 1915811307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d77208f8dc375864da19b1f70c617083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &529280138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -574,6 +585,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4060533112954561575, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 380791180}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
