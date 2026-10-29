@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4981002837066262043}
   - component: {fileID: 7015059216157083504}
   - component: {fileID: 8166881919853294929}
+  - component: {fileID: 5923443463817027049}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -193,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8036594704447241609}
+  powerUpSound: {fileID: 0}
 --- !u!70 &7015059216157083504
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -249,6 +251,20 @@ MonoBehaviour:
   orbCounter: {fileID: 0}
   remainingOrbs: 8
   collected: 0
+  orbPickupSound: {fileID: 0}
+--- !u!114 &5923443463817027049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169433476716986418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4913a4100f0fb548848dbf17d5930dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  funnyHat: {fileID: 7344257625209996580}
 --- !u!1 &3696514281982937332
 GameObject:
   m_ObjectHideFlags: 0
