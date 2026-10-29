@@ -14,6 +14,13 @@ public class OrbCollision : MonoBehaviour
     public int remainingOrbs = 8;
     public int collected = 0;
 
+    public AudioSource orbPickupSound;
+
+    void Awake()
+    {
+        AudioManager audioManager = Object.FindFirstObjectByType<AudioManager>().GetComponent<AudioManager>();
+        orbPickupSound = audioManager.orbPickupSound;
+    }
     void Start()
     {
         orbCounter.text = collected + "/" + remainingOrbs;
@@ -46,6 +53,7 @@ private void OnTriggerEnter2D(Collider2D collision)
             orb.Collect(PlayerSprite, redPlayer);
 
             isOrb = true;
+
         }
 
         else if (collision.CompareTag("BlueOrb"))
@@ -73,6 +81,8 @@ private void OnTriggerEnter2D(Collider2D collision)
         if (isOrb)
         {
             collision.gameObject.SetActive(false);
+
+            AudioManager.Instance.PlaySound(orbPickupSound);
 
             collected++;
 
