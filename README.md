@@ -146,10 +146,16 @@ Pseudocode, UML, or a flowchart:
 --------------------------------------
 
 **Plugin/DLL**
+UML:
 
-************FLOWCHART HERE
+<img width="316" height="175" alt="DLL_UML" src="https://github.com/user-attachments/assets/5159b7bf-f321-40bb-a60c-e91ad235e063" />
+
+Flowchart:
+
+<img width="377" height="234" alt="Screenshot 2026-10-29 154926" src="https://github.com/user-attachments/assets/d191befb-2ce8-4033-99d0-9c6569e233e0" />
+
 
 Explanation:
-(Explaining here why the implementation was best suited for the course project) 
+This DLL is built to be a generic timer that can be incorporated into any project that needs a timer. Since the timer reduction only triggers by a function that needs to be called, any object that uses this plugin can modify the timer at its discretion, leaving the attached object responsible for modifying the timer. This means ReduceTimer can be called in Update, like it is for this project. But also it can be set to reduce at whatever time is convenient for the project, which also means if pause functionality is required, that can be implemented by the implementing object. We felt that for this project the implementation of this DLL made sense to run our timer and possibly plan to use it even more in the final submission to possibly control powerups, enemies spawn, etc.
 
 
