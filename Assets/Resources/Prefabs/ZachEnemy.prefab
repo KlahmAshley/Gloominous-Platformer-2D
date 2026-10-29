@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4359405, y: 0.7755394, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 5.5, y: 5.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9047723545465224281}
@@ -178,14 +178,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de105a778d8a2e74692f5f877fccb651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: -2148812533475887025}
   moveSpeed: 5
   enemyType: 0
   player: {fileID: 0}
   projectile: {fileID: 2818324358193608120, guid: 3dcd2e593d44fa943b4b650c31a2efe8, type: 3}
   projectileSpawnPoint: {fileID: 8604351964927675739}
-  stopRange: 5
-  retreatRange: 2
+  stopRange: 10
+  retreatRange: 5
   groundCheckLeft: {fileID: 9047723545465224281}
   groundCheckRight: {fileID: 8467615733214842398}
   groundLayer:
@@ -248,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 6666022883355647266}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -0.118, z: 0}
+  m_LocalPosition: {x: -0.1225, y: -0.118, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -279,7 +279,7 @@ Transform:
   m_GameObject: {fileID: 6672672601603761362}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -0.118, z: 0}
+  m_LocalPosition: {x: 0.1225, y: -0.118, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
