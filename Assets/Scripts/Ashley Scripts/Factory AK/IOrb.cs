@@ -3,5 +3,5 @@ using UnityEngine;
 
 public interface IOrb 
 {
-    public void Collect(SpriteRenderer PlayerSprite, Sprite RedPlayer);
+    public void Collect(SpriteRenderer PlayerSprite, Sprite Player);
 }
