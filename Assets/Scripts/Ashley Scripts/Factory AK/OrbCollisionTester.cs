@@ -15,7 +15,7 @@ public class OrbCollisionTester : MonoBehaviour
         {
             orbFactory = new RedOrbFactory();
 
-            IOrb orb = orbFactory.DestoryandChangeOrb(redPlayer);
+            IOrb orb = orbFactory.ChangeOrb(redPlayer);
 
             orb.Collect(PlayerSprite, redPlayer);
 
@@ -26,7 +26,7 @@ public class OrbCollisionTester : MonoBehaviour
         {
             orbFactory = new BlueOrbFactory();
 
-            IOrb orb = orbFactory.DestoryandChangeOrb(bluePlayer);
+            IOrb orb = orbFactory.ChangeOrb(bluePlayer);
 
             orb.Collect(PlayerSprite, bluePlayer);
 
@@ -37,7 +37,7 @@ public class OrbCollisionTester : MonoBehaviour
         {
             orbFactory = new GreenOrbFactory();
 
-            IOrb orb = orbFactory.DestoryandChangeOrb(greenPlayer);
+            IOrb orb = orbFactory.ChangeOrb(greenPlayer);
 
             orb.Collect(PlayerSprite, greenPlayer);
 

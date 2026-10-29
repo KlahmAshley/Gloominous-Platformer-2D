@@ -41,7 +41,7 @@ private void OnTriggerEnter2D(Collider2D collision)
         {
             orbFactory = new RedOrbFactory();
 
-            IOrb orb = orbFactory.DestoryandChangeOrb(redPlayer);
+            IOrb orb = orbFactory.ChangeOrb(redPlayer);
 
             orb.Collect(PlayerSprite, redPlayer);
 
@@ -52,7 +52,7 @@ private void OnTriggerEnter2D(Collider2D collision)
         {
             orbFactory = new BlueOrbFactory();
 
-            IOrb orb = orbFactory.DestoryandChangeOrb(bluePlayer);
+            IOrb orb = orbFactory.ChangeOrb(bluePlayer);
 
             orb.Collect(PlayerSprite, bluePlayer);
 
@@ -63,7 +63,7 @@ private void OnTriggerEnter2D(Collider2D collision)
         {
             orbFactory = new GreenOrbFactory();
 
-            IOrb orb = orbFactory.DestoryandChangeOrb(greenPlayer);
+            IOrb orb = orbFactory.ChangeOrb(greenPlayer);
 
             orb.Collect(PlayerSprite, greenPlayer);
 

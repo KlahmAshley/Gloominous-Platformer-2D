@@ -13,7 +13,8 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlayMusic(AudioSource clipM)
     {
-        clipM.Play();   
+        clipM.Play();
+        DontDestroyOnLoad(clipM);
     }
 
 
