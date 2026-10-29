@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         enemyFactory = new EnemyFactory();
+        SpawnEnemy();
         StartCoroutine(DelaySpawn());
     }
     IEnumerator DelaySpawn()
