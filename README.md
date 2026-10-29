@@ -168,4 +168,4 @@ https://unity.com/resources/design-patterns-solid-ebook
 https://reactiveprogramming.io/blog/en/design-patterns/factory-method
 https://github.com/PacktPublishing/Game-Development-Patterns-with-Unity-2021-Second-Edition
 
-
+All audio was either made with jsfxr or found on Freesound -> Creative Commons
