@@ -73,6 +73,8 @@ By: Zach
 
 Explanation:
 
+The Game Manager similarly implements and inherits from the Singleton base, protecting and isolating the class as a singleton for all scenes. it houses a simple set of boolean values as references for the current game state (paused, menu, fail state), and a Timer variable from the attached DLL which acts as a loss condition for the player, it then contains two methods to be called by other scripts, OnOrbCollected which simply attaches a gameplay effect of increasing the remaining time to the orbs, and a PauseGame method, which as it would imply, pauses the game time. the reason behind it's implementation is to maintain an easy reference object for any and all gamestate related variables to be accessed through and manage tasks related to tracking the gamestate without populating levels with redundant copies.
+
 Pseudocode, UML, or a flowchart:
 
 --------------------------------------
@@ -107,6 +109,8 @@ Pseudocode, UML, or a flowchart:
 By: Zach
 
 Explanation:
+
+The factory uses a concrete factory class which works through a simple, easily modular switch case implementation. it contains an enemy constructor which intakes a provided enemy type among the EnemyType enum, and a position Vector, then instantiates an enemy of the provided specifications, while there was consideration to separate the factories further and have the switch case call a create value from those, the idea was disregarded as it seemed obtuse and would result in more complexity when modifying the factory with new enemy types. this simpler modular design is far easier for team members to manage, and was chosen for overall readability above all else.
 
 Pseudocode, UML, or a flowchart:
 
