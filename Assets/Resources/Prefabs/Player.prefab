@@ -157,6 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputActions: {fileID: -944628639613478452, guid: e637f11415715d046b785d7e1207aa5c, type: 3}
+  player: {fileID: 3169433476716986418}
+  gameManager: {fileID: 0}
   walkAction:
     m_Name: Walk
     m_Type: 0

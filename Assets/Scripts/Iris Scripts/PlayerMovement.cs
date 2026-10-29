@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         Object.FindFirstObjectByType<SceneChanger>().GetComponent<SceneChanger>().LoadReplayScene();
         AudioManager.Instance.PlaySound(deathSound);

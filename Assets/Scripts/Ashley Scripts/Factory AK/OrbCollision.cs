@@ -36,6 +36,7 @@ public class OrbCollision : MonoBehaviour
  
 private void OnTriggerEnter2D(Collider2D collision)
     {
+        bool isOrb = false;
         if (collision.CompareTag("RedOrb"))
         {
             orbFactory = new RedOrbFactory();
@@ -44,11 +45,7 @@ private void OnTriggerEnter2D(Collider2D collision)
 
             orb.Collect(PlayerSprite, redPlayer);
 
-            collision.gameObject.SetActive(false);
-
-            collected++;
-
-            orbCounter.text = collected + "/" + remainingOrbs;
+            isOrb = true;
         }
 
         else if (collision.CompareTag("BlueOrb"))
@@ -59,11 +56,7 @@ private void OnTriggerEnter2D(Collider2D collision)
 
             orb.Collect(PlayerSprite, bluePlayer);
 
-            collision.gameObject.SetActive(false);
-
-            collected++;
-
-            orbCounter.text = collected + "/" + remainingOrbs;
+            isOrb = true;
         }
 
         else if (collision.CompareTag("GreenOrb"))
@@ -74,18 +67,19 @@ private void OnTriggerEnter2D(Collider2D collision)
 
             orb.Collect(PlayerSprite, greenPlayer);
 
+            isOrb = true;
+        }
+
+        if (isOrb)
+        {
             collision.gameObject.SetActive(false);
 
             collected++;
 
             orbCounter.text = collected + "/" + remainingOrbs;
-        }
 
-        else
-        {
-            Debug.Log("Not Triggering an Orb");
+            Object.FindFirstObjectByType<GameManager>().GetComponent<GameManager>().OrbCollected();
         }
-
     }
 }
 
