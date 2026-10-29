@@ -1919,6 +1919,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IrisEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6639456109832109506, guid: c44f395f3ab91a34180f258430f68d70, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3565,6 +3569,10 @@ PrefabInstance:
     - target: {fileID: 4625075758494339362, guid: c44f395f3ab91a34180f258430f68d70, type: 3}
       propertyPath: m_Name
       value: IrisEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639456109832109506, guid: c44f395f3ab91a34180f258430f68d70, type: 3}
+      propertyPath: target
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
