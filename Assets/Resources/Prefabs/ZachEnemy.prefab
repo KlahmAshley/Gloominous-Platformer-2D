@@ -191,7 +191,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  fireRate: 3
+  fireRate: 5
 --- !u!1 &2642449934019032982
 GameObject:
   m_ObjectHideFlags: 0

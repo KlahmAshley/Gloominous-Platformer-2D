@@ -40,28 +40,28 @@ public class ZachEnemy : Enemy
     }
     private void CheckDistance()
     {
-        hitLeft = Physics2D.Raycast(groundCheckLeft.position, Vector2.down, 0.2f, groundLayer);
-        hitRight = Physics2D.Raycast(groundCheckRight.position, Vector2.down, 0.2f, groundLayer);
-        Debug.Log("right is: " + hitRight.collider + " Left is: " + hitLeft.collider);
-        float distanceToPlayer = Mathf.Abs(transform.position.x - player.position.x);
+        //hitLeft = Physics2D.Raycast(groundCheckLeft.position, Vector2.down, 0.2f, groundLayer);
+        //hitRight = Physics2D.Raycast(groundCheckRight.position, Vector2.down, 0.2f, groundLayer);
+        //Debug.Log("right is: " + hitRight.collider + " Left is: " + hitLeft.collider);
+        //float distanceToPlayer = Mathf.Abs(transform.position.x - player.position.x);
 
-        Vector2 target = new Vector2(player.position.x, transform.position.y);
-        if (distanceToPlayer > stopRange && hitRight.collider != null)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
-        }
-        else if (distanceToPlayer < retreatRange && hitLeft.collider != null)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, target, -moveSpeed * Time.deltaTime);
-        }
-        else
-        {
+        //Vector2 target = new Vector2(player.position.x, transform.position.y);
+        //if (distanceToPlayer > stopRange && hitRight.collider != null)
+        //{
+        //    transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+        //}
+        //else if (distanceToPlayer < retreatRange && hitLeft.collider != null)
+        //{
+        //    transform.position = Vector2.MoveTowards(transform.position, target, -moveSpeed * Time.deltaTime);
+        //}
+        //else
+        //{
             if (Time.time >= fireRate)
             {
                 Shoot();
                 fireRate = Time.time + 1.5f;
             }
-        }
+        //}
     }
     public void FacePlayer()
     {

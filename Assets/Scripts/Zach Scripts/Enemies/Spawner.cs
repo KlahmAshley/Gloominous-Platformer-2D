@@ -11,7 +11,6 @@ public class Spawner : MonoBehaviour
     [SerializeField] int spawned;
     EnemyFactory enemyFactory;
 
-    // Update is called once per frame
     void Start()
     {
         enemyFactory = new EnemyFactory();

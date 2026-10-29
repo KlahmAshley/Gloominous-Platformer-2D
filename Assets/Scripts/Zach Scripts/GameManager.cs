@@ -10,7 +10,6 @@ public class GameManager : Singleton<GameManager>
     Timer timer = new Timer();
     public float timeRemaining;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         timer.TimesUp += TimerRanOut;
