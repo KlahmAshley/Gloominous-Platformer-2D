@@ -158,4 +158,10 @@ Flowchart:
 Explanation:
 This DLL is built to be a generic timer that can be incorporated into any project that needs a timer. Since the timer reduction only triggers by a function that needs to be called, any object that uses this plugin can modify the timer at its discretion, leaving the attached object responsible for modifying the timer. This means ReduceTimer can be called in Update, like it is for this project. But also it can be set to reduce at whatever time is convenient for the project, which also means if pause functionality is required, that can be implemented by the implementing object. We felt that for this project the implementation of this DLL made sense to run our timer and possibly plan to use it even more in the final submission to possibly control powerups, enemies spawn, etc.
 
+--------------------------------------
+Resources used: 
+https://unity.com/resources/design-patterns-solid-ebook
+https://reactiveprogramming.io/blog/en/design-patterns/factory-method
+https://github.com/PacktPublishing/Game-Development-Patterns-with-Unity-2021-Second-Edition
+
 
