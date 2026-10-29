@@ -52,6 +52,8 @@ By: Ashley
 
 Explanation:
 
+My Audio Manager singleton was implemented by first inheriting from a generic singleton class which when instanced insures there is only one of those instances in a scene and destroy the rest.The audio manager has 2 methods a PlaySound and PlayMusic method. These methods are able to be called in any other class to play a sound or music from that object.  It was implemented this way for simplicity and keeping the code cleaner within the game. it benefits our game by controlling sound instances and keeping overall organization with audio. 
+
 Flowchart:
 
 <img width="563" height="389" alt="AudioManagerCheckInDiagram" src="https://github.com/user-attachments/assets/d3b6f709-ffc0-4bd0-ab0c-eeb429eba66e" />
@@ -81,6 +83,10 @@ Pseudocode, UML, or a flowchart:
 By: Ashley 
 
 Explanation: 
+
+
+My Command pattern was implemented by firstly creating a command interface called ICommand that stores both execute and undo methods. I then have a concrete method that inherits from the interface to give the execute and undo methods the toggle functionality. It then goes to the toggler which gets the game object and does the setting active of the gameobject. As its not just turning the hat on and off and its actually executing and undoing there is an invoker that stores the toggling input for and stores it into a stack for the commands.Lastly the HatCommander is the input to get the toggle  and execute the invoker commands. It was implemented this way because I felt with the basics down of the single hat some changes could be made to better to to stack the hats on the players head and be able to undo with the stack in future progress. It benefits our game by being fun, It is a funny idea we have for our GDW game and I wanted to add this concept into our platformer variation. 
+
 
 UML:
 
@@ -112,6 +118,9 @@ Pseudocode, UML, or a flowchart:
 By: Ashley 
 
 Explanation:
+
+My Factory pattern was implemented by first creating a product interface IOrb that has a method that takes in a sprite renderer (from the player sprite) and the coloured sprite that it will get changed into. Each coloured orb has a concrete product class that calls this method and passes in the corresponding coloured sprite. I then implemented an abstract factory “OrbFactory” which my concrete factories for each colour would inherit from to do the actual orb calling  Finally this factory is managed by an OrbCollision script thats attached to the player, it has an OnTriggerEnter2D method, depending on which coloured orb is collided with the orbfactory creates a new corresponding coloured orb factory which then is used to call ChangeOrb with the related sprite. After that the established orb called/changed too calls the Collect method which finally sets the player sprite to the correct colour. It was implemented this way for ease of change if there is additional function we wanted to add to each orb. It benefits our game as visually it is very fun and a similar aesthetic to our GDW games mechanic of picking up orbs and changing colour, it also gives us a lot of freedom and do some other cool things with the orbs for the final if we choose too.
+
 
 UML:
 
