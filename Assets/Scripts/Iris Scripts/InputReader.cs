@@ -18,7 +18,8 @@ public class InputReader : MonoBehaviour
     private ICommandPlus leftCommand = new MoveLeftCommand();
     private ICommandPlus rightCommand = new MoveRightCommand();
     private ICommandPlus nonCommand = new NonCommand();
-    private Dictionary<KeyCode, ICommandPlus> keyBindings = new Dictionary<KeyCode, ICommandPlus>();
+
+    //private Dictionary<KeyCode, ICommandPlus> keyBindings = new Dictionary<KeyCode, ICommandPlus>();
     //private ICommand pauseCommand = new PauseCommand(gameManager);
 
     //private const string RebindsKey = "CommandInputRebinds";
