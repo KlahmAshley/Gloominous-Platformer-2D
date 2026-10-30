@@ -10,21 +10,21 @@ before in 2nd year as a GDW team, understand each other's workflows and have alr
 We hope to sharpen these skills in Unity and get the concepts solid before venturing into using them with Unreal Engine.
 
 
-**Ashley** 	
+**Ashley 35%** 	
 Audio Manager,
 Orb Factory,
 Hat Command Pattern,
 Any Art/Visuals, and
 Documentation (Aside from each persons individual)
 
-**Iris**
+**Iris 35%**
 Gameplay programming,
 Scene Manager,
 Power Ups Factory,
 Death Replay System, and
 Implementing DLL 
 
-**Zach**
+**Zach 30%**
 Gameplay programming,
 Game Manager,
 Enemy Factory, and
