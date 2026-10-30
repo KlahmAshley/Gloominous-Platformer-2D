@@ -233,7 +233,7 @@ PowerupFactory is designed to get references to the three powers on Start(). Fro
 
 UML:
 
-<img width="712" height="487" alt="Screenshot_2026-10-29_153451" src="https://github.com/user-attachments/assets/e9dc1278-d84a-40f7-8a6f-833a63f7df34" />
+<img width="356" height="244" alt="Screenshot_2026-10-29_153451" src="https://github.com/user-attachments/assets/e9dc1278-d84a-40f7-8a6f-833a63f7df34" />
 
 
 **Implementation 3 : Enemy Factory**
@@ -245,7 +245,7 @@ The factory uses a concrete factory class which works through a simple, easily m
 
 UML:
 
-<img width="582" height="762" alt="image" src="https://github.com/user-attachments/assets/16aa9c9b-6deb-4b23-9f90-ce681bad3665" />
+<img width="291" height="381" alt="image" src="https://github.com/user-attachments/assets/16aa9c9b-6deb-4b23-9f90-ce681bad3665" />
 
 
 --------------------------------------
