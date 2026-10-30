@@ -95,7 +95,23 @@ The Game Manager similarly implements and inherits from the Singleton base, prot
 
 Pseudocode, UML, or a flowchart:
 
+class GameManager
 
+bool gamePaused
+bool gameOver
+bool mainMenu
+Timer timer
+float timeRemaining
+
+TimerRanOut(): kill player
+
+OrbCollected(): up timer 10 seconds
+
+PauseGame(): 
+if (unpaused)
+    pause 
+else 
+    unpause
 
 --------------------------------------
 
@@ -132,9 +148,60 @@ By: Zach
 
 Explanation:
 
-The factory uses a concrete factory class which works through a simple, easily modular switch case implementation. it contains an enemy constructor which intakes a provided enemy type among the EnemyType enum, and a position Vector, then instantiates an enemy of the provided specifications, while there was consideration to separate the factories further and have the switch case call a create value from those, the idea was disregarded as it seemed obtuse and would result in more complexity when modifying the factory with new enemy types. this simpler modular design is far easier for team members to manage, and was chosen for overall readability above all else.
+this command pattern implements an interface called ICommandPlus, which has a bare bones execute function that takes a gameobject as parameter, a series of control commands override the execute and get a playerMovement component from the gameObject where they execute the movement and jump functions when detecting input. the inputs are detected from the inputReader in the processData function, and when appropriate values are detected inputReader calls the specific commands. the key rebinder has a set of three functions to attach to UI buttons for rebinding each control, when called the they call the secondary Rebind function, passing the inputActions binding name and a call to get the key index, the rebind function then instances the inputActions object and disables the action temporarily. then unity performs its rebinding functions, some cleanup is performed because the functions don't automatically garbage collect.
 
 Pseudocode, UML, or a flowchart:
+Class Rebinding
+
+InputActions inputActions
+RebindOberation rebindOperation
+
+LeftRebind
+    Rebind(actionName = "PlayerAction/Walk", bindIndex = GetWalkIndex("PlayerAction/Walk", "negative")
+    
+    
+RightRebind
+    Rebind(actionName = "PlayerAction/Walk", bindIndex = GetWalkIndex("PlayerAction/Walk", "positive")
+    
+JumpRebind
+    Rebind(actionName = "PlayerAction/Jump", bindIndex = GetJumpIndex("PlayerAction/Jump")
+
+Rebind(actionName, bindIndex)
+    if rebindOperation exists or binding index isn't valid
+        return
+.    
+    action = find action using actionName
+    disable action
+.
+    start rebinding for bindIndex
+.
+    when rebinding operation completes
+        re-enable action
+        dispose of operation
+        null rebindingOperation
+    when rebinding operation stops
+        re-enable action
+        dispose of operation
+        null rebindingOperation
+.
+    start rebindingOperation
+
+GetJumpIndex(actionName)
+    action = find action using actionName
+.
+    for each binding in action's bindings 
+        if it is not a composite
+            return index
+.
+    return invalid index
+
+GetWalkIndex(actionName, Direction)
+    action = find action using actionName
+    for each binding in action's bindings
+        if it is not part of a composite
+            return index by direction
+.
+    return invalid index
 
 --------------------------------------
 
@@ -170,8 +237,7 @@ By: Zach
 
 Explanation:
 
-
-this command pattern implements an interface called ICommandPlus, which has a bare bones execute function that takes a gameobject as parameter, a series of control commands override the execute and get a playerMovement component from the gameObject where they execute the movement and jump functions when detecting input. the inputs are detected from the inputReader in the processData function, and when appropriate values are detected inputReader calls the specific commands. the key rebinder has a set of three functions to attach to UI buttons for rebinding each control, when called the they call the secondary Rebind function, passing the inputActions binding name and a call to get the key index, the rebind function then instances the inputActions object and disables the action temporarily. then unity performs its rebinding functions, some cleanup is performed because the functions don't automatically garbage collect.
+The factory uses a concrete factory class which works through a simple, easily modular switch case implementation. it contains an enemy constructor which intakes a provided enemy type among the EnemyType enum, and a position Vector, then instantiates an enemy of the provided specifications, while there was consideration to separate the factories further and have the switch case call a create value from those, the idea was disregarded as it seemed obtuse and would result in more complexity when modifying the factory with new enemy types. this simpler modular design is far easier for team members to manage, and was chosen for overall readability above all else.
 
 
 Pseudocode, UML, or a flowchart:
