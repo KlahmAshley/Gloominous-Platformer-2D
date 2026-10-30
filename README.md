@@ -278,3 +278,6 @@ https://reactiveprogramming.io/blog/en/design-patterns/factory-method
 https://github.com/PacktPublishing/Game-Development-Patterns-with-Unity-2021-Second-Edition
 
 All audio was either made with jsfxr or found on Freesound -> Creative Commons
+
+AI Disclaimer:
+AI was used to write the first pass of CharacterMovement, InputReader, and InputRoot. InputRoot was not modified. InputReader was enhanced with the addition of the recording and playback features, as well as the rebinding. CharacterMovement was enhanced to be compatible with the recording features, and was lightly modified to feel better for our game.
