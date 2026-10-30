@@ -243,8 +243,10 @@ Explanation:
 
 The factory uses a concrete factory class which works through a simple, easily modular switch case implementation. it contains an enemy constructor which intakes a provided enemy type among the EnemyType enum, and a position Vector, then instantiates an enemy of the provided specifications, while there was consideration to separate the factories further and have the switch case call a create value from those, the idea was disregarded as it seemed obtuse and would result in more complexity when modifying the factory with new enemy types. this simpler modular design is far easier for team members to manage, and was chosen for overall readability above all else.
 
+UML:
 
-Pseudocode, UML, or a flowchart:
+<img width="582" height="762" alt="image" src="https://github.com/user-attachments/assets/16aa9c9b-6deb-4b23-9f90-ce681bad3665" />
+
 
 --------------------------------------
 
