@@ -43,7 +43,11 @@ objective is to collect all the red, blue and green orbs without running into en
 to help them evade enemies and platform easier.There is 2 levels, the player wins when all the orbs have been collected from both levels,
 the player loses if they run into an enemy, fall into the void or run out of time, the game then restarts. 
 
-********ADD SCREENSHOTS W/ ANNOTATIONS, LEGENDS AND/OR LABELS HERE 
+<img width="582" height="326" alt="Screenshot 2026-10-29 222609" src="https://github.com/user-attachments/assets/62594982-acfd-47fc-8b0f-2919c0931243" />
+
+<img width="582" height="326" alt="Screenshot 2026-10-29 222542" src="https://github.com/user-attachments/assets/cc0afcd1-ba5d-4c99-a48f-2276e808cb70" />
+
+
 --------------------------------------
 **Singleton**
 
@@ -93,7 +97,7 @@ Explanation:
 
 The Game Manager similarly implements and inherits from the Singleton base, protecting and isolating the class as a singleton for all scenes. it houses a simple set of boolean values as references for the current game state (paused, menu, fail state), and a Timer variable from the attached DLL which acts as a loss condition for the player, it then contains two methods to be called by other scripts, OnOrbCollected which simply attaches a gameplay effect of increasing the remaining time to the orbs, and a PauseGame method, which as it would imply, pauses the game time. the reason behind it's implementation is to maintain an easy reference object for any and all gamestate related variables to be accessed through and manage tasks related to tracking the gamestate without populating levels with redundant copies.
 
-Pseudocode, UML, or a flowchart:
+Pseudocode:
 
 class GameManager
 
@@ -150,7 +154,7 @@ Explanation:
 
 this command pattern implements an interface called ICommandPlus, which has a bare bones execute function that takes a gameobject as parameter, a series of control commands override the execute and get a playerMovement component from the gameObject where they execute the movement and jump functions when detecting input. the inputs are detected from the inputReader in the processData function, and when appropriate values are detected inputReader calls the specific commands. the key rebinder has a set of three functions to attach to UI buttons for rebinding each control, when called the they call the secondary Rebind function, passing the inputActions binding name and a call to get the key index, the rebind function then instances the inputActions object and disables the action temporarily. then unity performs its rebinding functions, some cleanup is performed because the functions don't automatically garbage collect.
 
-Pseudocode, UML, or a flowchart:
+Pseudocode:
 Class Rebinding
 
 InputActions inputActions
