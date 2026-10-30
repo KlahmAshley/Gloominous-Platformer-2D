@@ -170,6 +170,10 @@ By: Zach
 
 Explanation:
 
+
+this command pattern implements an interface called ICommandPlus, which has a bare bones execute function that takes a gameobject as parameter, a series of control commands override the execute and get a playerMovement component from the gameObject where they execute the movement and jump functions when detecting input. the inputs are detected from the inputReader in the processData function, and when appropriate values are detected inputReader calls the specific commands. the key rebinder has a set of three functions to attach to UI buttons for rebinding each control, when called the they call the secondary Rebind function, passing the inputActions binding name and a call to get the key index, the rebind function then instances the inputActions object and disables the action temporarily. then unity performs its rebinding functions, some cleanup is performed because the functions don't automatically garbage collect.
+
+
 Pseudocode, UML, or a flowchart:
 
 --------------------------------------
