@@ -32,7 +32,7 @@ Button Remapping
 
 **Gantt Chart:**
 
-<img width="512" height="331" alt="GanttChartProgress" src="https://github.com/user-attachments/assets/82ddc714-c0ec-4fbe-8e9e-ecbee248e144" />
+<img width="512" height="331" alt="Yellow and Purple Simple Project Timeline Gantt Chart" src="https://github.com/user-attachments/assets/29601890-d66b-4c55-b480-b84092021313" />
 
 --------------------------------------
 **Interactive Media Scenario Information:**
@@ -64,8 +64,26 @@ By: Iris
 
 Explanation:
 
-Pseudocode, UML, or a flowchart:
+Has basic scene switching functionality as a singleton, so any object can call scene changes when it's needed. This is necessary to be in a singleton because scene switching functionality inside an object that is inside the scene itself would be awkward. This script is also responsible for loading death replays, and carries the input data so it's not cleared between scene switches.
 
+Pseudocode:
+
+Class SceneManager
+
+bool isReplay = false
+bool inputRecording = List of Input Data
+
+SetSceneByInt(int scene_num): Load scene by its index
+
+SetSceneByName(string scene_name): Load scene by its name
+
+ReloadScene(): Load the active scene
+
+LoadReplayScene():
+    Invert the replay state
+    Get reference to inputReader object
+    Set inputRecording to inputReader's recorded input data
+    Reload the scene
 
 
 **Implementation 3 : Game Manager**
@@ -77,6 +95,8 @@ The Game Manager similarly implements and inherits from the Singleton base, prot
 
 Pseudocode, UML, or a flowchart:
 
+
+
 --------------------------------------
 
 **Command Design Pattern**
@@ -86,14 +106,11 @@ By: Ashley
 
 Explanation: 
 
-
 My Command pattern was implemented by firstly creating a command interface called ICommand that stores both execute and undo methods. I then have a concrete method that inherits from the interface to give the execute and undo methods the toggle functionality. It then goes to the toggler which gets the game object and does the setting active of the gameobject. As its not just turning the hat on and off and its actually executing and undoing there is an invoker that stores the toggling input for and stores it into a stack for the commands.Lastly the HatCommander is the input to get the toggle  and execute the invoker commands. It was implemented this way because I felt with the basics down of the single hat some changes could be made to better to to stack the hats on the players head and be able to undo with the stack in future progress. It benefits our game by being fun, It is a funny idea we have for our GDW game and I wanted to add this concept into our platformer variation. 
-
 
 UML:
 
 <img width="518" height="314" alt="CommandDiagram" src="https://github.com/user-attachments/assets/fe1f2f54-7ec0-4e3c-95bb-6b19eafa0306" />
-
 
 
 **Implementation 2 : Death Replay System**
@@ -101,7 +118,12 @@ By: Iris
 
 Explanation:
 
-Pseudocode, UML, or a flowchart:
+The command pattern is used to record all the inputs the player makes. If they die, the inputs are replayed to show the player (the replay can be ended prematurely by pressing space). The command pattern was necessary for this because otherwise it would be significantly more complicated to save the player's inputs every frame. This code is also easily expandable for more complex characters by adding new inputs to InputRoot, which will then be saved to the array and played back with no additional effort.
+
+
+Flowchart:
+
+<img width="550" height="315" alt="image" src="https://github.com/user-attachments/assets/f33b7e25-1795-4aef-b2bf-c85ffabb1a80" />
 
 
 
@@ -136,8 +158,11 @@ By: Iris
 
 Explanation: 
 
-Pseudocode, UML, or a flowchart:
+PowerupFactory is designed to get references to the three powers on Start(). From there, any script that has a reference to PowerupFactory can call create power, and inputting the powerup and the position it should go to, it's created. PowerupFactory does this using a switch case, and an Enum to determine which powerups are valid inputs. This is useful for quickly populating a level with powerups (as it's used in-game), but the modularity this script gives also allows it to be used for other purposes, and can easily be adapted to fit more powerups.
 
+UML:
+
+<img width="712" height="487" alt="Screenshot_2026-10-29_153451" src="https://github.com/user-attachments/assets/e9dc1278-d84a-40f7-8a6f-833a63f7df34" />
 
 
 **Implementation 3 : Enemy Factory**
@@ -158,6 +183,20 @@ Flowchart:
 
 <img width="377" height="234" alt="Screenshot 2026-10-29 154926" src="https://github.com/user-attachments/assets/d191befb-2ce8-4033-99d0-9c6569e233e0" />
 
+Pseudocode:
+
+Class Timer
+
+float timeLeft
+Action TimesUp
+
+StartTimer(float time): Sets the time left to the input number.
+
+TimeRanOut(): Triggers the TimesUp action to any scripts listening for this event.
+
+RaiseTimer(int increase): Increases the time left by the amount specified. Returns the time left in case the object needs it.
+
+ReduceTimer(int decrease): Decreases the time left by the amount specified, if this causes the time left to be 0, trigger the time left. Returns the time left in case the object needs it.
 
 Explanation:
 This DLL is built to be a generic timer that can be incorporated into any project that needs a timer. Since the timer reduction only triggers by a function that needs to be called, any object that uses this plugin can modify the timer at its discretion, leaving the attached object responsible for modifying the timer. This means ReduceTimer can be called in Update, like it is for this project. But also it can be set to reduce at whatever time is convenient for the project, which also means if pause functionality is required, that can be implemented by the implementing object. We felt that for this project the implementation of this DLL made sense to run our timer and possibly plan to use it even more in the final submission to possibly control powerups, enemies spawn, etc.
