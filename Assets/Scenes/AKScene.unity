@@ -1221,6 +1221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueOrb
       objectReference: {fileID: 0}
+    - target: {fileID: 8039768148025733954, guid: 10337ea58d6a95f42877e6203ee0f316, type: 3}
+      propertyPath: m_TagString
+      value: BlueOrb
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3420,6 +3424,11 @@ Transform:
   - {fileID: 887903261}
   m_Father: {fileID: 387851189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1319166408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3169433476716986418, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+  m_PrefabInstance: {fileID: 8986867969531972974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1386290661
 GameObject:
   m_ObjectHideFlags: 0
@@ -4717,24 +4726,48 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 862549755}
     - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      propertyPath: redP
+      value: 
+      objectReference: {fileID: 3819296022880137587, guid: 743a55ed040ddee47b667716eaad9c2b, type: 3}
+    - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      propertyPath: blueP
+      value: 
+      objectReference: {fileID: 3819296022880137587, guid: 776142cbfe6e1ef40abef4ec28afd954, type: 3}
+    - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      propertyPath: greenP
+      value: 
+      objectReference: {fileID: 3819296022880137587, guid: d7a704a3889828a41bae597e8ae1f294, type: 3}
+    - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      propertyPath: normalP
+      value: 
+      objectReference: {fileID: 3819296022880137587, guid: 5945ff2b51dbf874c9ac619fd9bf42d9, type: 3}
+    - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
       propertyPath: orbCounter
       value: 
       objectReference: {fileID: 892457712}
+    - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      propertyPath: pTransform
+      value: 
+      objectReference: {fileID: 8986867969531972980}
     - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
       propertyPath: orbPickupSound
       value: 
       objectReference: {fileID: 1903854985}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2546657167548590550, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3169433476716986418, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8986867969531972988}
   m_SourcePrefab: {fileID: 100100000, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
 --- !u!114 &8986867969531972977 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5923443463817027049, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
   m_PrefabInstance: {fileID: 8986867969531972974}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1319166408}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4913a4100f0fb548848dbf17d5930dc, type: 3}
@@ -4745,6 +4778,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2639586076621535498, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
   m_PrefabInstance: {fileID: 8986867969531972974}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8986867969531972988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319166408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19395b8cb08b674ab02da48eebbc97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

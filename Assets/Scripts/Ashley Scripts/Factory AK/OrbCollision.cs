@@ -1,8 +1,10 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
 public class OrbCollision : MonoBehaviour
 {
+    private ParticleSpawner particleSpawner;
     private OrbFactory orbFactory;
 
     public SpriteRenderer PlayerSprite;
@@ -16,10 +18,25 @@ public class OrbCollision : MonoBehaviour
 
     public AudioSource orbPickupSound;
 
+    public ParticleSystem normalP;
+    public ParticleSystem redP;
+    public ParticleSystem greenP;
+    public ParticleSystem blueP;
+    public ParticleSystem currentP;
+
+    public Transform pTransform;
+
+
     void Awake()
     {
         AudioManager audioManager = Object.FindFirstObjectByType<AudioManager>().GetComponent<AudioManager>();
         orbPickupSound = audioManager.orbPickupSound;
+
+        particleSpawner = GetComponent<ParticleSpawner>();
+
+        currentP = Instantiate(normalP, pTransform.position, pTransform.rotation);
+        currentP.transform.SetParent(pTransform);
+       currentP.transform.localScale = Vector3.one;
     }
     void Start()
     {
@@ -54,6 +71,12 @@ private void OnTriggerEnter2D(Collider2D collision)
 
             isOrb = true;
 
+            currentP = particleSpawner.spawnParticle(redP, pTransform, currentP);
+            currentP.transform.SetParent(pTransform);
+            currentP.transform.localScale = Vector3.one;
+
+            StartCoroutine(ColourTime(5));
+
         }
 
         else if (collision.CompareTag("BlueOrb"))
@@ -65,6 +88,12 @@ private void OnTriggerEnter2D(Collider2D collision)
             orb.Collect(PlayerSprite, bluePlayer);
 
             isOrb = true;
+
+            currentP = particleSpawner.spawnParticle(blueP, pTransform, currentP);
+            currentP.transform.SetParent(pTransform);
+            currentP.transform.localScale = Vector3.one;
+
+            StartCoroutine(ColourTime(5));
         }
 
         else if (collision.CompareTag("GreenOrb"))
@@ -76,6 +105,12 @@ private void OnTriggerEnter2D(Collider2D collision)
             orb.Collect(PlayerSprite, greenPlayer);
 
             isOrb = true;
+
+            currentP = particleSpawner.spawnParticle(greenP, pTransform, currentP);
+            currentP.transform.SetParent(pTransform);
+            currentP.transform.localScale = Vector3.one;
+
+            StartCoroutine(ColourTime(5));
         }
 
         if (isOrb)
@@ -90,6 +125,17 @@ private void OnTriggerEnter2D(Collider2D collision)
 
             Object.FindFirstObjectByType<GameManager>().GetComponent<GameManager>().OrbCollected();
         }
+ 
+    }
+
+    private IEnumerator ColourTime(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        currentP = particleSpawner.spawnParticle(normalP, pTransform, currentP);
+        currentP.transform.SetParent(pTransform);
+        currentP.transform.localScale = Vector3.one;
+
     }
 }
 

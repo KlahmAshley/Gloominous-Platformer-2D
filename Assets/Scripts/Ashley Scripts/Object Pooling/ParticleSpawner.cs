@@ -2,22 +2,13 @@ using UnityEngine;
 
 public class ParticleSpawner : MonoBehaviour
 {
-    //References to different particles 
-    // instaniating ig?
-    //idk soemtjing else
-
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+   
+    public ParticleSystem spawnParticle(ParticleSystem ps, Transform player, ParticleSystem currentParticle)
     {
-        
+        ParticleSystem Ps = Instantiate(ps, player.position, player.rotation, transform.parent);
+        Destroy(currentParticle.gameObject);
+        currentParticle = Ps;
+        return currentParticle;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
