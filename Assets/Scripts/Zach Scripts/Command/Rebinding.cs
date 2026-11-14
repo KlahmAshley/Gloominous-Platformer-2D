@@ -3,8 +3,6 @@ using UnityEngine.InputSystem;
 
 public class Rebinding : MonoBehaviour
 {
-    //I asked AI for help on this one cuz I couldn't find any useful videos and it kept talking about InputActionRebindingExtensions,
-    //this took brunt of my will to do, but I read the entire page on InputActionRebindingExtensions and can only pray this works right.
     [SerializeField] InputActionAsset inputActions;
 
     InputActionRebindingExtensions.RebindingOperation rebindingOperation;
@@ -80,3 +78,6 @@ public class Rebinding : MonoBehaviour
         return -1;
     }
 }
+
+//I asked AI for help on this one cuz I couldn't find any useful videos and it kept talking about InputActionRebindingExtensions,
+//this took brunt of my will to do, but I read the entire page on InputActionRebindingExtensions and can only pray this works right.
