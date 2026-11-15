@@ -9,7 +9,6 @@ public class Particles : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("Enabled!");
 
     }
 
