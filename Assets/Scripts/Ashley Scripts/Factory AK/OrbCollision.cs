@@ -34,9 +34,9 @@ public class OrbCollision : MonoBehaviour
 
         particleSpawner = GetComponent<ParticleSpawner>();
 
-        currentP = Instantiate(normalP, pTransform.position, pTransform.rotation);
-        currentP.transform.SetParent(pTransform);
-       currentP.transform.localScale = Vector3.one;
+     //   currentP = Instantiate(normalP, pTransform.position, pTransform.rotation);
+   //     currentP.transform.SetParent(pTransform);
+  //     currentP.transform.localScale = Vector3.one;
     }
     void Start()
     {
@@ -71,9 +71,9 @@ private void OnTriggerEnter2D(Collider2D collision)
 
             isOrb = true;
 
-            currentP = particleSpawner.spawnParticle(redP, pTransform, currentP);
-            currentP.transform.SetParent(pTransform);
-            currentP.transform.localScale = Vector3.one;
+       //     currentP = particleSpawner.spawnParticle(redP, pTransform, currentP);
+     //       currentP.transform.SetParent(pTransform);
+      //      currentP.transform.localScale = Vector3.one;
 
             StartCoroutine(ColourTime(5));
 
@@ -89,9 +89,9 @@ private void OnTriggerEnter2D(Collider2D collision)
 
             isOrb = true;
 
-            currentP = particleSpawner.spawnParticle(blueP, pTransform, currentP);
-            currentP.transform.SetParent(pTransform);
-            currentP.transform.localScale = Vector3.one;
+     //       currentP = particleSpawner.spawnParticle(blueP, pTransform, currentP);
+     //       currentP.transform.SetParent(pTransform);
+     //       currentP.transform.localScale = Vector3.one;
 
             StartCoroutine(ColourTime(5));
         }
@@ -106,9 +106,9 @@ private void OnTriggerEnter2D(Collider2D collision)
 
             isOrb = true;
 
-            currentP = particleSpawner.spawnParticle(greenP, pTransform, currentP);
-            currentP.transform.SetParent(pTransform);
-            currentP.transform.localScale = Vector3.one;
+     //       currentP = particleSpawner.spawnParticle(greenP, pTransform, currentP);
+    //        currentP.transform.SetParent(pTransform);
+     //       currentP.transform.localScale = Vector3.one;
 
             StartCoroutine(ColourTime(5));
         }
@@ -132,9 +132,9 @@ private void OnTriggerEnter2D(Collider2D collision)
     {
         yield return new WaitForSeconds(waitTime);
 
-        currentP = particleSpawner.spawnParticle(normalP, pTransform, currentP);
-        currentP.transform.SetParent(pTransform);
-        currentP.transform.localScale = Vector3.one;
+    //    currentP = particleSpawner.spawnParticle(normalP, pTransform, currentP);
+   //     currentP.transform.SetParent(pTransform);
+   //     currentP.transform.localScale = Vector3.one;
 
     }
 }
