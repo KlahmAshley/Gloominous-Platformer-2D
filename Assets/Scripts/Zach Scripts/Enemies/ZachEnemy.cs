@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ZachEnemy : Enemy
@@ -5,6 +6,7 @@ public class ZachEnemy : Enemy
     public Transform player;
     public GameObject projectile;
     public Transform projectileSpawnPoint;
+    public ObjectPool bulletPool;
 
     public float stopRange = 5f;
     public float retreatRange = 2f;
@@ -35,6 +37,7 @@ public class ZachEnemy : Enemy
         CheckDistance();
         FacePlayer();
         nextFireTime += Time.deltaTime;
+        Debug.Log("nextFireTime: " + nextFireTime);
     }
     protected override void Move()
     {
@@ -87,11 +90,25 @@ public class ZachEnemy : Enemy
     {
         if (projectile != null && projectileSpawnPoint != null)
         {
-            Instantiate(projectile, projectileSpawnPoint.position, Quaternion.identity);
+            GameObject bullet = bulletPool.GetObject();
+            bullet.transform.position = projectileSpawnPoint.position;
+            bullet.transform.rotation = Quaternion.identity;
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            if (rb != null && player != null)
+            {
+                Vector2 direction = (player.position - projectileSpawnPoint.position).normalized;
+                rb.linearVelocity = direction * projectile.GetComponent<Projectile>().bulletSpeed;
+            }
+            StartCoroutine(DisableAfterTime(bullet, projectile.GetComponent<Projectile>().lifeTime));
         }
     }
     override protected void Die()
     {
         base.Die();
+    }
+    IEnumerator DisableAfterTime(GameObject bullet, float lifeTime)
+    {
+        yield return new WaitForSeconds(lifeTime);
+        bulletPool.ReturnObject(bullet);
     }
 }

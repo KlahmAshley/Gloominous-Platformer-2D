@@ -1,26 +1,23 @@
+using System.Collections;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     public float bulletSpeed = 10f;
     public float lifeTime = 5f;
-    Rigidbody2D rb;
+    public ObjectPool bulletPool;
     Transform player;
     private Vector2 direction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        if (player == null)
+        if (bulletPool == null)
         {
-            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-            if (playerObj != null)
+            GameObject poolObj = GameObject.Find("BulletPool");
+            if (poolObj != null)
             {
-                player = playerObj.transform;
-                direction = (player.position - transform.position);
-                rb.linearVelocity = direction * bulletSpeed;
-                transform.rotation = Quaternion.LookRotation(Vector3.zero, direction);
+                bulletPool = poolObj.GetComponent<ObjectPool>();
             }
         }
     }
@@ -33,7 +30,8 @@ public class Projectile : MonoBehaviour
         }
         else if (!collision.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            bulletPool.ReturnObject(gameObject);
         }
     }
+    
 }
