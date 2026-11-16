@@ -16,6 +16,7 @@ public class ZachEnemy : Enemy
     RaycastHit2D hitLeft;
     RaycastHit2D hitRight;
     public float fireRate = 1.5f;
+    private float nextFireTime = 0f;
     protected override void Awake()
     {
         base.Awake();
@@ -33,6 +34,7 @@ public class ZachEnemy : Enemy
         Move();
         CheckDistance();
         FacePlayer();
+        nextFireTime += Time.deltaTime;
     }
     protected override void Move()
     {
@@ -56,10 +58,10 @@ public class ZachEnemy : Enemy
         //}
         //else
         //{
-            if (Time.time >= fireRate)
+            if (nextFireTime >= fireRate)
             {
                 Shoot();
-                fireRate = Time.time + 1.5f;
+                nextFireTime = 0f;
             }
         //}
     }

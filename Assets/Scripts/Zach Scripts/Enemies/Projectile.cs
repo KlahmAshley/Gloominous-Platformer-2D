@@ -23,7 +23,6 @@ public class Projectile : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(Vector3.zero, direction);
             }
         }
-        Destroy(gameObject, lifeTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
