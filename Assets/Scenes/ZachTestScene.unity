@@ -217,6 +217,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77208f8dc375864da19b1f70c617083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &492121396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492121398}
+  - component: {fileID: 492121397}
+  m_Layer: 0
+  m_Name: BulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &492121397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492121396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b583d4ca2d62dc42b529224d255bd03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileFactory: {fileID: 11400000, guid: 3daa1236d07057e4490cf95248d2e232, type: 2}
+  projectilePrefab: {fileID: 2818324358193608120, guid: 3dcd2e593d44fa943b4b650c31a2efe8, type: 3}
+--- !u!4 &492121398
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492121396}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.97429, y: -0.5064733, z: -34.53462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &529280138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -231,7 +277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 130242674243595975, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5281701508415888908, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -273,6 +319,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8017228089335147901, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017228089335147901, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
+      propertyPath: bulletPool
+      value: 
+      objectReference: {fileID: 492121397}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -654,6 +708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IrisEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4625075758494339362, guid: c44f395f3ab91a34180f258430f68d70, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -674,3 +732,4 @@ SceneRoots:
   - {fileID: 529280138}
   - {fileID: 1588742063}
   - {fileID: 2103576311}
+  - {fileID: 492121398}

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class EnemyFactory : MonoBehaviour
+public  class EnemyFactory : MonoBehaviour
 {
-    public GameObject CreateEnemy(EnemyType type, Vector3 position)
+    public  GameObject CreateEnemy(EnemyType type, Vector3 position)
     {
         GameObject enemy = null;
         switch (type)
@@ -25,5 +25,6 @@ public enum EnemyType
 {
     Zach,
     Ashley,
-    Iris
+    Iris,
+    Bullet
 }

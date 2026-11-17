@@ -3,9 +3,19 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    public GameObject objectPrefab;
+    [SerializeField] private ProjectileFactory projectileFactory;
+    public GameObject projectilePrefab;
     private Queue<GameObject> objectPool = new Queue<GameObject>();
+    bool isBad = false;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            isBad = !isBad;
+            Debug.Log("using bad mode: " + isBad);
+        }
+    }
     public GameObject GetObject()
     {
         if (objectPool.Count > 0)
@@ -14,7 +24,14 @@ public class ObjectPool : MonoBehaviour
             obj.SetActive(true);
             return obj;
         }
-        return Instantiate(objectPrefab);
+        if (!isBad)
+        {
+            return projectileFactory.Create();
+        }
+        else
+        {
+            return Instantiate(projectilePrefab);
+        }
     }
 
     public void ReturnObject(GameObject obj)

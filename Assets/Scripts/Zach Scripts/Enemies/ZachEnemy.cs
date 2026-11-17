@@ -37,7 +37,6 @@ public class ZachEnemy : Enemy
         CheckDistance();
         FacePlayer();
         nextFireTime += Time.deltaTime;
-        Debug.Log("nextFireTime: " + nextFireTime);
     }
     protected override void Move()
     {
@@ -88,18 +87,21 @@ public class ZachEnemy : Enemy
     }
     void Shoot()
     {
-        if (projectile != null && projectileSpawnPoint != null)
+        if (bulletPool != null && projectileSpawnPoint != null)
         {
             GameObject bullet = bulletPool.GetObject();
             bullet.transform.position = projectileSpawnPoint.position;
             bullet.transform.rotation = Quaternion.identity;
+
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            Projectile component = bullet.GetComponent<Projectile>();
+
             if (rb != null && player != null)
             {
                 Vector2 direction = (player.position - projectileSpawnPoint.position).normalized;
-                rb.linearVelocity = direction * projectile.GetComponent<Projectile>().bulletSpeed;
+                rb.linearVelocity = direction * component.bulletSpeed;
+                StartCoroutine(DisableAfterTime(bullet, component.lifeTime));
             }
-            StartCoroutine(DisableAfterTime(bullet, projectile.GetComponent<Projectile>().lifeTime));
         }
     }
     override protected void Die()
