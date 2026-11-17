@@ -9,3 +9,6 @@ After:
 the thing impacting frame performance would probably have been the machine gun of death I created in the scene, but jokes aside I believe that in this case it is the repeated bullet calculations happening every shot.
 the pattern I implemented was the factory, I made a scriptable object that separates the bullet creation from the player and instead inserts it into the object pool, this had a minimal but somewhat observable impact on performance, 
 spikes were minutely lower and my memory usage dropped a consistent 1% when I enabled the new structure, though this could have been coincidence.
+
+
+project is available in a release title "In lab activity - Zach"
