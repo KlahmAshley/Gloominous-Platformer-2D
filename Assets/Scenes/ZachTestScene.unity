@@ -321,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8017228089335147901, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
       propertyPath: fireRate
-      value: 1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8017228089335147901, guid: 7cfee4c2cab78d9469fd41b0c2b3f2a1, type: 3}
       propertyPath: bulletPool
