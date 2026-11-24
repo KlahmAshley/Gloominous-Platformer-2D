@@ -57,7 +57,6 @@ public class InputReader : MonoBehaviour
 
     private void Update()
     {
-
         if (isPlayback)
         {
             if (jumpAction.WasPressedThisFrame())
@@ -67,7 +66,6 @@ public class InputReader : MonoBehaviour
             if (frameCount < inputRecording.Count)
             {
                 inputData = inputRecording[frameCount];
-
                 ProcessData(inputData);
             }
             else
@@ -83,7 +81,6 @@ public class InputReader : MonoBehaviour
                 jumpPressed = jumpAction.WasPressedThisFrame()
             };
             inputRecording.Add(inputData);
-            Debug.Log(inputData.walkInput);
             ProcessData(inputData);
         }
         frameCount++;
@@ -94,20 +91,16 @@ public class InputReader : MonoBehaviour
         //Debug.Log("it's doing something");
         if (data.walkInput > 0.1f)
         {
-            Debug.Log("it's doing Right");
             rightCommand.Execute(player);
         }
         else if (data.walkInput < -0.1f)
         {
-            Debug.Log("it's doing Left");
             leftCommand.Execute(player);
         }
         else if (data.walkInput == 0)
         {
-            Debug.Log("it's doing Nothing");
             nonCommand.Execute(player);
         }
-
         if (data.jumpPressed)
         {
             jumpCommand.Execute(player);
