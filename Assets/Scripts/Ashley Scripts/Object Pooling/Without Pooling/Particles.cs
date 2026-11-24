@@ -5,7 +5,7 @@ using System.Collections;
 public class Particles : MonoBehaviour
 {
     public IObjectPool<Particles> Pool { get; set; }
-    private float waitTime = 2.0f;
+  
 
     private void OnEnable()
     {

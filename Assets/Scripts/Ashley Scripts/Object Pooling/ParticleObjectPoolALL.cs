@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.Pool;
+using System.Collections;
+
+
 
 public class ParticleObjectPoolALL : MonoBehaviour
 {
@@ -223,26 +226,26 @@ public class ParticleObjectPoolALL : MonoBehaviour
 
     }
 
-    private System.Collections.IEnumerator ReturnAfterNormal(ParticlesALL pooledObject, float seconds)
+    private IEnumerator ReturnAfterNormal(ParticlesALL pooledObject, float seconds)
     {
         yield return new WaitForSeconds(seconds);
         // Give it back to the pool.
         normalpool.Release(pooledObject);
     }
 
-    private System.Collections.IEnumerator ReturnAfterRed(ParticlesALL pooledObject, float seconds)
+    private IEnumerator ReturnAfterRed(ParticlesALL pooledObject, float seconds)
     {
         yield return new WaitForSeconds(seconds);
         // Give it back to the pool.
         redpool.Release(pooledObject);
     }
-    private System.Collections.IEnumerator ReturnAfterBlue(ParticlesALL pooledObject, float seconds)
+    private IEnumerator ReturnAfterBlue(ParticlesALL pooledObject, float seconds)
     {
         yield return new WaitForSeconds(seconds);
         // Give it back to the pool.
         bluepool.Release(pooledObject);
     }
-    private System.Collections.IEnumerator ReturnAfterGreen(ParticlesALL pooledObject, float seconds)
+    private IEnumerator ReturnAfterGreen(ParticlesALL pooledObject, float seconds)
     {
         yield return new WaitForSeconds(seconds);
         // Give it back to the pool.
