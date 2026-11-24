@@ -1120,9 +1120,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1058579330}
     - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      propertyPath: redP
+      value: 
+      objectReference: {fileID: 3819296022880137587, guid: 743a55ed040ddee47b667716eaad9c2b, type: 3}
+    - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      propertyPath: blueP
+      value: 
+      objectReference: {fileID: 3819296022880137587, guid: 776142cbfe6e1ef40abef4ec28afd954, type: 3}
+    - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      propertyPath: greenP
+      value: 
+      objectReference: {fileID: 3819296022880137587, guid: d7a704a3889828a41bae597e8ae1f294, type: 3}
+    - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      propertyPath: normalP
+      value: 
+      objectReference: {fileID: 3819296022880137587, guid: 5945ff2b51dbf874c9ac619fd9bf42d9, type: 3}
+    - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
       propertyPath: orbCounter
       value: 
       objectReference: {fileID: 1212991632}
+    - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      propertyPath: pTransform
+      value: 
+      objectReference: {fileID: 1426068165}
     - target: {fileID: 8166881919853294929, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
       propertyPath: orbPickupSound
       value: 
@@ -3089,6 +3109,11 @@ Transform:
   - {fileID: 1213533021}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1426068165 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2639586076621535498, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+  m_PrefabInstance: {fileID: 420442119}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1428880396
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,7 +3366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -9.854553, y: 788.3689}
+  m_AnchoredPosition: {x: -9.854492, y: 788.3689}
   m_SizeDelta: {x: 1500, y: 790}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1645432404
