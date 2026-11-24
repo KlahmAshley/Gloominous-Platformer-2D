@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using System;
 
 public class OrbCollision : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class OrbCollision : MonoBehaviour
 
     private ParticleObjectPoolALL particlePoolAll;
 
+    public static event Action LevelOver;
 
     public SpriteRenderer PlayerSprite;
     public Sprite redPlayer;
@@ -32,7 +34,7 @@ public class OrbCollision : MonoBehaviour
 
     void Awake()
     {
-        AudioManager audioManager = Object.FindFirstObjectByType<AudioManager>().GetComponent<AudioManager>();
+        AudioManager audioManager = UnityEngine.Object.FindFirstObjectByType<AudioManager>().GetComponent<AudioManager>();
         orbPickupSound = audioManager.orbPickupSound;
 
         particlePoolAll = GetComponentInChildren<ParticleObjectPoolALL>();
@@ -52,20 +54,6 @@ public class OrbCollision : MonoBehaviour
     {
         orbCounter.text = collected + "/" + remainingOrbs;
         
-    }
-
-    private void Update()
-    {
-        SceneSwitch();
-
-    }
-
-    void SceneSwitch()
-    {
-        if (remainingOrbs == collected)
-        {
-            SceneChanger.Instance.SetSceneByName("Scene2");
-        }
     }
  
 private void OnTriggerEnter2D(Collider2D collision)
@@ -151,9 +139,18 @@ private void OnTriggerEnter2D(Collider2D collision)
 
             orbCounter.text = collected + "/" + remainingOrbs;
 
-            Object.FindFirstObjectByType<GameManager>().GetComponent<GameManager>().OrbCollected();
+            UnityEngine.Object.FindFirstObjectByType<GameManager>().GetComponent<GameManager>().OrbCollected();
         }
- 
+
+
+
+        if (remainingOrbs == collected)
+        {
+            LevelOver?.Invoke();
+            SceneChanger.Instance.SetSceneByName("Scene2");
+        }
+
+
     }
 
 
