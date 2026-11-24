@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class OrbCollision : MonoBehaviour
 {
-    private ParticleSpawner particleSpawner;
+   // private ParticleSpawner particleSpawner;
     private OrbFactory orbFactory;
+
+    private ParticleObjectPoolALL particlePoolAll;
+
 
     public SpriteRenderer PlayerSprite;
     public Sprite redPlayer;
@@ -22,7 +25,7 @@ public class OrbCollision : MonoBehaviour
     public ParticleSystem redP;
     public ParticleSystem greenP;
     public ParticleSystem blueP;
-    public ParticleSystem currentP;
+    public GameObject currentP;
 
     public Transform pTransform;
 
@@ -32,12 +35,19 @@ public class OrbCollision : MonoBehaviour
         AudioManager audioManager = Object.FindFirstObjectByType<AudioManager>().GetComponent<AudioManager>();
         orbPickupSound = audioManager.orbPickupSound;
 
-        particleSpawner = GetComponent<ParticleSpawner>();
+        particlePoolAll = GetComponentInChildren<ParticleObjectPoolALL>();
 
-     //   currentP = Instantiate(normalP, pTransform.position, pTransform.rotation);
-   //     currentP.transform.SetParent(pTransform);
-  //     currentP.transform.localScale = Vector3.one;
+        ParticlesALL currentP = particlePoolAll.SpawnNormal();
+        currentP.transform.SetParent(pTransform);
+        currentP.transform.localScale = Vector3.one;
+
+        //  particleSpawner = GetComponent<ParticleSpawner>();
+
+        //    currentP = Instantiate(normalP, pTransform.position, pTransform.rotation);
+        //    currentP.transform.SetParent(pTransform);
+        //   currentP.transform.localScale = Vector3.one;
     }
+
     void Start()
     {
         orbCounter.text = collected + "/" + remainingOrbs;
@@ -60,6 +70,7 @@ public class OrbCollision : MonoBehaviour
  
 private void OnTriggerEnter2D(Collider2D collision)
     {
+
         bool isOrb = false;
         if (collision.CompareTag("RedOrb"))
         {
@@ -71,13 +82,18 @@ private void OnTriggerEnter2D(Collider2D collision)
 
             isOrb = true;
 
-       //     currentP = particleSpawner.spawnParticle(redP, pTransform, currentP);
-     //       currentP.transform.SetParent(pTransform);
-      //      currentP.transform.localScale = Vector3.one;
+            //      currentP = particleSpawner.spawnParticle(redP, pTransform, currentP);
+            //     currentP.transform.SetParent(pTransform);
+            //     currentP.transform.localScale = Vector3.one;
+
+            ParticlesALL currentP = particlePoolAll.SpawnRed();
+            currentP.transform.SetParent(pTransform);
+            currentP.transform.localScale = Vector3.one;
 
             StartCoroutine(ColourTime(5));
 
         }
+ 
 
         else if (collision.CompareTag("BlueOrb"))
         {
@@ -89,12 +105,18 @@ private void OnTriggerEnter2D(Collider2D collision)
 
             isOrb = true;
 
-     //       currentP = particleSpawner.spawnParticle(blueP, pTransform, currentP);
-     //       currentP.transform.SetParent(pTransform);
-     //       currentP.transform.localScale = Vector3.one;
+            //      currentP = particleSpawner.spawnParticle(blueP, pTransform, currentP);
+            //      currentP.transform.SetParent(pTransform);
+            //      currentP.transform.localScale = Vector3.one;
+
+           
+            ParticlesALL currentP = particlePoolAll.SpawnBlue();
+            currentP.transform.SetParent(pTransform);
+            currentP.transform.localScale = Vector3.one;
 
             StartCoroutine(ColourTime(5));
         }
+
 
         else if (collision.CompareTag("GreenOrb"))
         {
@@ -106,12 +128,18 @@ private void OnTriggerEnter2D(Collider2D collision)
 
             isOrb = true;
 
-     //       currentP = particleSpawner.spawnParticle(greenP, pTransform, currentP);
-    //        currentP.transform.SetParent(pTransform);
-     //       currentP.transform.localScale = Vector3.one;
+            //     currentP = particleSpawner.spawnParticle(greenP, pTransform, currentP);
+            //    currentP.transform.SetParent(pTransform);
+            //   currentP.transform.localScale = Vector3.one;
+
+            ParticlesALL currentP = particlePoolAll.SpawnGreen();
+            currentP.transform.SetParent(pTransform);
+            currentP.transform.localScale = Vector3.one;
+
 
             StartCoroutine(ColourTime(5));
         }
+
 
         if (isOrb)
         {
@@ -128,13 +156,16 @@ private void OnTriggerEnter2D(Collider2D collision)
  
     }
 
+
+
     private IEnumerator ColourTime(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
 
-    //    currentP = particleSpawner.spawnParticle(normalP, pTransform, currentP);
-   //     currentP.transform.SetParent(pTransform);
-   //     currentP.transform.localScale = Vector3.one;
+        particlePoolAll.SpawnNormal();
+        //   currentP = particleSpawner.spawnParticle(normalP, pTransform, currentP);
+        //  currentP.transform.SetParent(pTransform);
+        //  currentP.transform.localScale = Vector3.one;
 
     }
 }

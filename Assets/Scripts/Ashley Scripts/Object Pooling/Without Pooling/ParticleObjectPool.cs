@@ -9,8 +9,6 @@ public class ParticleObjectPool : MonoBehaviour
 
     public GameObject twinkle;
 
-
-    
     public IObjectPool<Particles> Pool
     {
         get
