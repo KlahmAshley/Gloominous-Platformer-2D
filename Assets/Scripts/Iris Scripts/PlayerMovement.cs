@@ -57,8 +57,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsWalk", false);
             animator.SetBool("IsJump", true);
         }
-
-        if(IsGrounded())
+        else
         {
             animator.SetBool("IsJump", false);
         }
@@ -82,7 +81,13 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsWalk", true);
             animator.SetBool("IsJump", false);
         }
-        
+        else if(moveDir == 0 && IsGrounded())
+        {
+            animator.SetBool("IsIdle", true);
+            animator.SetBool("IsWalk", false);
+            animator.SetBool("IsJump", false);
+        }
+
         Vector2 velocity = rb.linearVelocity;
         velocity.x = moveDir * moveSpeed;
         rb.linearVelocity = velocity;
