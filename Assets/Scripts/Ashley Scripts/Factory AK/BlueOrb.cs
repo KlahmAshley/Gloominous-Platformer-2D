@@ -3,10 +3,10 @@ using UnityEngine;
 public class BlueOrb : MonoBehaviour, IOrb
 {
     public SpriteRenderer PlayerSprite;
-    public Sprite BluePlayer;
+    private Color blue = Color.blue;
 
-    public void Collect(SpriteRenderer PlayerSprite, Sprite BluePlayer)
+    public void Collect(SpriteRenderer PlayerSprite, Color OrbColor)
     {
-        PlayerSprite.sprite = BluePlayer;
+        PlayerSprite.color = OrbColor;
     }
 }

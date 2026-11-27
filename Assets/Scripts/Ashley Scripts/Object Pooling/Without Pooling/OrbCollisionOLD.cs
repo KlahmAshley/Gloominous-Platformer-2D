@@ -26,6 +26,10 @@ public class OrbCollisionOLD : MonoBehaviour
 
     public Transform pTransform;
 
+    public Color red = Color.red;
+    public Color green = Color.green;
+    public Color blue = Color.blue;
+
 
     void Awake()
     {
@@ -65,9 +69,9 @@ public class OrbCollisionOLD : MonoBehaviour
         {
             orbFactory = new RedOrbFactory();
 
-            IOrb orb = orbFactory.ChangeOrb(redPlayer);
+            IOrb orb = orbFactory.ChangeOrb(red);
 
-            orb.Collect(PlayerSprite, redPlayer);
+            orb.Collect(PlayerSprite, red);
 
             isOrb = true;
 
@@ -83,9 +87,9 @@ public class OrbCollisionOLD : MonoBehaviour
         {
             orbFactory = new BlueOrbFactory();
 
-            IOrb orb = orbFactory.ChangeOrb(bluePlayer);
+            IOrb orb = orbFactory.ChangeOrb(blue);
 
-            orb.Collect(PlayerSprite, bluePlayer);
+            orb.Collect(PlayerSprite, blue);
 
             isOrb = true;
 
@@ -100,9 +104,9 @@ public class OrbCollisionOLD : MonoBehaviour
         {
             orbFactory = new GreenOrbFactory();
 
-            IOrb orb = orbFactory.ChangeOrb(greenPlayer);
+            IOrb orb = orbFactory.ChangeOrb(green);
 
-            orb.Collect(PlayerSprite, greenPlayer);
+            orb.Collect(PlayerSprite, green);
 
             isOrb = true;
 

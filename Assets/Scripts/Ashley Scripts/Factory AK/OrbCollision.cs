@@ -13,9 +13,10 @@ public class OrbCollision : MonoBehaviour
     public static event Action LevelOver;
 
     public SpriteRenderer PlayerSprite;
-    public Sprite redPlayer;
-    public Sprite greenPlayer;
-    public Sprite bluePlayer;
+
+    public Color red = Color.red;
+    public Color green = Color.green;   
+    public Color blue = Color.blue; 
 
     public TMP_Text orbCounter;
     public int remainingOrbs = 8;
@@ -64,9 +65,9 @@ private void OnTriggerEnter2D(Collider2D collision)
         {
             orbFactory = new RedOrbFactory();
 
-            IOrb orb = orbFactory.ChangeOrb(redPlayer);
+            IOrb orb = orbFactory.ChangeOrb(red);
 
-            orb.Collect(PlayerSprite, redPlayer);
+            orb.Collect(PlayerSprite, red);
 
             isOrb = true;
 
@@ -87,9 +88,9 @@ private void OnTriggerEnter2D(Collider2D collision)
         {
             orbFactory = new BlueOrbFactory();
 
-            IOrb orb = orbFactory.ChangeOrb(bluePlayer);
+            IOrb orb = orbFactory.ChangeOrb(blue);
 
-            orb.Collect(PlayerSprite, bluePlayer);
+            orb.Collect(PlayerSprite, blue);
 
             isOrb = true;
 
@@ -110,9 +111,9 @@ private void OnTriggerEnter2D(Collider2D collision)
         {
             orbFactory = new GreenOrbFactory();
 
-            IOrb orb = orbFactory.ChangeOrb(greenPlayer);
+            IOrb orb = orbFactory.ChangeOrb(green);
 
-            orb.Collect(PlayerSprite, greenPlayer);
+            orb.Collect(PlayerSprite, green);
 
             isOrb = true;
 

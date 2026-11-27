@@ -7,10 +7,10 @@ using Unity;
 public class RedOrb : MonoBehaviour, IOrb
 {
     public SpriteRenderer PlayerSprite;
-    public Sprite RedPlayer;
+    private Color red = Color.red;
 
-    public void Collect(SpriteRenderer PlayerSprite, Sprite RedPlayer)
+    public void Collect(SpriteRenderer PlayerSprite, Color OrbColor)
     {
-        PlayerSprite.sprite = RedPlayer;
+        PlayerSprite.color = OrbColor;
     }
 }

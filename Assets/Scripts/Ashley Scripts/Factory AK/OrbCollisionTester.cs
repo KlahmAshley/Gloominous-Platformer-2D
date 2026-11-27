@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class OrbCollisionTester : MonoBehaviour
 {
-    private OrbFactory orbFactory;
+   /* private OrbFactory orbFactory;
 
     public SpriteRenderer PlayerSprite;
     public Sprite redPlayer;
@@ -49,7 +49,7 @@ public class OrbCollisionTester : MonoBehaviour
             Debug.Log("Not Triggering an Orb");
         }
 
-    }
+    }*/
 }
 
 
