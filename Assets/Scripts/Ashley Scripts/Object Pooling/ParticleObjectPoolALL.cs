@@ -225,7 +225,7 @@ public class ParticleObjectPoolALL : MonoBehaviour
         return part;
 
     }
-
+    
     private IEnumerator ReturnAfterNormal(ParticlesALL pooledObject, float seconds)
     {
         yield return new WaitForSeconds(seconds);
