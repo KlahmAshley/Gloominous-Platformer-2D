@@ -4977,6 +4977,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 25738649}
     - target: {fileID: 8036594704447241609, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 8986867969531972981}
+    - target: {fileID: 8036594704447241609, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 710233808}
@@ -5031,6 +5035,11 @@ MonoBehaviour:
 --- !u!4 &8986867969531972980 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2639586076621535498, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
+  m_PrefabInstance: {fileID: 8986867969531972974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8986867969531972981 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3054252581675637110, guid: 108140443580d234fadf1a463ca2f8c6, type: 3}
   m_PrefabInstance: {fileID: 8986867969531972974}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

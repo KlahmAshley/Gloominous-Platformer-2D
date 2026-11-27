@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3346205467649790360}
   - component: {fileID: -2148812533475887025}
   - component: {fileID: 8017228089335147901}
+  - component: {fileID: 3025892047563994071}
   m_Layer: 7
   m_Name: ZachEnemy
   m_TagString: Enemy
@@ -82,12 +83,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1060260322147092464, guid: ef00d887827db764b9bb6132d7ba1a3f, type: 3}
+  m_Sprite: {fileID: -9076046234581796825, guid: ef00d887827db764b9bb6132d7ba1a3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.27}
+  m_Size: {x: 0.1, y: 0.11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -131,8 +132,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.27}
-    newSize: {x: 0.16, y: 0.27}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.1, y: 0.11}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -192,6 +193,28 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   fireRate: 10
+--- !u!95 &3025892047563994071
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130242674243595975}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 12a8a5f3f5d524b4aa912c61d4e32ec8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2642449934019032982
 GameObject:
   m_ObjectHideFlags: 0

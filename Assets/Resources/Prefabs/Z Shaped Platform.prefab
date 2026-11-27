@@ -129,6 +129,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3181186768882768710}
     m_Modifications:
+    - target: {fileID: 590959844896117037, guid: 71425f9ff6a5bb34db9aaddc211cfef3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20.612
+      objectReference: {fileID: 0}
+    - target: {fileID: 590959844896117037, guid: 71425f9ff6a5bb34db9aaddc211cfef3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2826
+      objectReference: {fileID: 0}
     - target: {fileID: 5263979552525900058, guid: 71425f9ff6a5bb34db9aaddc211cfef3, type: 3}
       propertyPath: m_Name
       value: Longer Platform (1)
@@ -191,6 +199,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3181186768882768710}
     m_Modifications:
+    - target: {fileID: 590959844896117037, guid: 71425f9ff6a5bb34db9aaddc211cfef3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20.8504
+      objectReference: {fileID: 0}
+    - target: {fileID: 590959844896117037, guid: 71425f9ff6a5bb34db9aaddc211cfef3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.3017
+      objectReference: {fileID: 0}
     - target: {fileID: 5263979552525900058, guid: 71425f9ff6a5bb34db9aaddc211cfef3, type: 3}
       propertyPath: m_Name
       value: Longer Platform (2)

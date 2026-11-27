@@ -14,6 +14,12 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     int hp = 1;
 
+
+    public Animator animator;
+
+
+
+
     //Ashley Changes: Adding my Audio references and calls, I am going to create a seoerate script to handle orb counter + scene changing for cleaner code!
     public AudioSource deathSound;
     public AudioSource jumpSound;
@@ -29,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
         AudioManager audioManager = Object.FindFirstObjectByType<AudioManager>().GetComponent<AudioManager>();
         deathSound = audioManager.deathSound;
         jumpSound = audioManager.jumpSound;
+        animator.SetBool("IsIdle", true);
+        animator.SetBool("IsWalk", false);
+        animator.SetBool("IsJump", false);
     }
 
     void Update()
@@ -40,6 +49,18 @@ public class PlayerMovement : MonoBehaviour
         if (transform.position.y < deathBarrierY)
         {
             Die();
+        }
+
+        if (!IsGrounded())
+        {
+            animator.SetBool("IsIdle", false);
+            animator.SetBool("IsWalk", false);
+            animator.SetBool("IsJump", true);
+        }
+
+        if(IsGrounded())
+        {
+            animator.SetBool("IsJump", false);
         }
     }
 
@@ -53,10 +74,20 @@ public class PlayerMovement : MonoBehaviour
         if (moveDir != 0)
         {
             GetComponent<SpriteRenderer>().flipX = moveDir > 0;
+      
         }
+        if (moveDir != 0 && IsGrounded())
+        {
+            animator.SetBool("IsIdle", false);
+            animator.SetBool("IsWalk", true);
+            animator.SetBool("IsJump", false);
+        }
+        
         Vector2 velocity = rb.linearVelocity;
         velocity.x = moveDir * moveSpeed;
         rb.linearVelocity = velocity;
+    
+
     }
     public void SetHorizontal(float dir)
     {
@@ -68,6 +99,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce); 
             AudioManager.Instance.PlaySound(jumpSound);
+            animator.SetBool("IsJump", true);
+            animator.SetBool("IsWalk", false);
+            animator.SetBool("IsIdle", false);
+
         }
     }
 
